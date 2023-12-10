@@ -1,6 +1,7 @@
 import argparse
 import os
 from itertools import islice
+from sklearn.metrics import mean_squared_error
 
 import torch
 from accelerate import Accelerator
@@ -25,9 +26,7 @@ class SavePeftModelCallback(TrainerCallback):
         **kwargs,
     ):
         checkpoint_folder = os.path.join(args.output_dir, f"{PREFIX_CHECKPOINT_DIR}-{state.global_step}")
-
         kwargs["model"].save_pretrained(checkpoint_folder)
-
         pytorch_model_path = os.path.join(checkpoint_folder, "pytorch_model.bin")
         torch.save({}, pytorch_model_path)
         return control
@@ -58,32 +57,27 @@ class PrintLossCallback(TrainerCallback):
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model_path", type=str, default="bigcode/large-model")
+    parser.add_argument("--model_path", type=str, default="bigcode/starcoder")
     parser.add_argument("--dataset_name", type=str, default="HuggingFaceH4/CodeAlpaca_20K")
     parser.add_argument("--subset", type=str)
     parser.add_argument("--split", type=str)
     parser.add_argument("--size_valid_set", type=int, default=10000)
     parser.add_argument("--streaming", action="store_true")
     parser.add_argument("--shuffle_buffer", type=int, default=5000)
-
-    parser.add_argument("--input_column_name", type=str, default="prompt")
-    parser.add_argument("--output_column_name", type=str, default="completion")
-
+    parser.add_argument("--input_column_name", type=str, default="input")
+    parser.add_argument("--output_column_name", type=str, default="output")
     parser.add_argument("--seq_length", type=int, default=2048)
     parser.add_argument("--max_steps", type=int, default=10000)
     parser.add_argument("--batch_size", type=int, default=1)
     parser.add_argument("--gradient_accumulation_steps", type=int, default=16)
     parser.add_argument("--eos_token_id", type=int, default=49152)
-
     parser.add_argument("--lora_r", type=int, default=16)
     parser.add_argument("--lora_alpha", type=int, default=32)
     parser.add_argument("--lora_dropout", type=float, default=0.05)
-
     parser.add_argument("--learning_rate", type=float, default=5e-6)
     parser.add_argument("--lr_scheduler_type", type=str, default="cosine")
     parser.add_argument("--num_warmup_steps", type=int, default=100)
     parser.add_argument("--weight_decay", type=float, default=0.05)
-
     parser.add_argument("--local_rank", type=int, default=0)
     parser.add_argument("--no_fp16", action="store_false")
     parser.add_argument("--bf16", action="store_true", default=True)
@@ -92,9 +86,8 @@ def get_args():
     parser.add_argument("--num_workers", type=int, default=None)
     parser.add_argument("--output_dir", type=str, default="./checkpoints")
     parser.add_argument("--log_freq", default=1, type=int)
-    parser.add_argument("--eval_freq", default=1000, type=int)
+    parser.add_argument("--eval_freq", default=1, type=int)
     parser.add_argument("--save_freq", default=1000, type=int)
-
     return parser.parse_args()
 
 
@@ -200,8 +193,8 @@ class ConstantLengthDataset(IterableDataset):
 
 
 def create_datasets(tokenizer, args):
-    dataset = load_dataset(
-        args.dataset_name,
+    dataset = load_dataset('json', data_files='/u/bzd2/ftdata.json',
+        # args.dataset_name,
         data_dir=args.subset,
         split=args.split,
         use_auth_token=True,
@@ -315,6 +308,7 @@ def run_training(args, train_data, val_data):
 def main(args):
     tokenizer = AutoTokenizer.from_pretrained(args.model_path, use_auth_token=True)
     train_dataset, eval_dataset = create_datasets(tokenizer, args)
+    # print(eval_dataset)
     run_training(args, train_dataset, eval_dataset)
 
 
@@ -333,8 +327,6 @@ if __name__ == "__main__":
 
 # use the command below to run this
 '''
-python3 -m torch.distributed.run --nproc_per_node=2 finetune/custom_fine_tune.py   --model_path="bigcode
-/starcoderbase-1b"  --dataset_name="ArmelR/stack-exchange-instruction"  --subset="data/finetune"  --split="train"  --size_valid_set 2000  --streaming  -
--seq_length 1024  --max_steps 100  --batch_size 1  --input_column_name="question"  --output_column_name="response" --gradient_accumulation_steps 16 --le
-arning_rate 1e-4 --lr_scheduler_type="cosine" --num_warmup_steps 2 --weight_decay 0.05 --output_dir="./checkpoints" 
+python3 -m torch.distributed.run --nproc_per_node=2 finetune/custom_fine_tune.py   --model_path="bigcode/starcoderbase-1b"  --dataset_name="ArmelR/stack-exchange-instruction"  --subset="data/finetune"  --split="train"  --size_valid_set 2000  --streaming  --seq_length 1024  --max_steps 100  --batch_size 1  --input_column_name="input"  --output_column_name="output" --gradient_accumulation_steps 16 --learning_rate 1e-4 --lr_scheduler_type="cosine" --num_warmup_steps 2 --weight_decay 0.05 --output_dir="./checkpoints" 
 '''
+
