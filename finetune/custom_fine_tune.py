@@ -2,7 +2,8 @@ import argparse
 import os
 from itertools import islice
 from sklearn.metrics import mean_squared_error
-
+import code_bert_score
+from transformers import EvalPrediction
 import torch
 from accelerate import Accelerator
 from datasets import load_dataset
@@ -12,10 +13,23 @@ from tqdm import tqdm
 from transformers import AutoConfig, AutoModelForCausalLM, AutoTokenizer, Trainer, TrainingArguments, logging, set_seed
 from transformers import TrainerCallback, TrainingArguments, TrainerState, TrainerControl
 from transformers.trainer_utils import PREFIX_CHECKPOINT_DIR
+import datetime
 
 """
 Fine-Tune StarCoder on Code Alpaca/SE
 """
+os.environ["TRANSFORMERS_CACHE"] = "/projects/bbvz/bzd2"
+
+def compute_similarity(code1, code2):
+    _, _, f1_score, _ = code_bert_score.score(cands=[code1], refs=[code2], lang='python')
+    return f1_score.item()
+
+class ComputeSimilarityCallback(TrainerCallback):
+    def on_prediction_step(self, args: TrainingArguments, state: TrainerState, control: TrainerControl, predictions=None, labels=None, **kwargs):
+        if predictions is not None and labels is not None:
+            similarity = compute_similarity(predictions, labels)
+            print(f"Similarity: {similarity}")
+
 
 class SavePeftModelCallback(TrainerCallback):
     def on_save(
@@ -25,9 +39,12 @@ class SavePeftModelCallback(TrainerCallback):
         control: TrainerControl,
         **kwargs,
     ):
+        print("I AM HERE AND I AM SAVING THE MODEL")
         checkpoint_folder = os.path.join(args.output_dir, f"{PREFIX_CHECKPOINT_DIR}-{state.global_step}")
+        print("the checkpoint model will be saved in ", checkpoint_folder)
         kwargs["model"].save_pretrained(checkpoint_folder)
         pytorch_model_path = os.path.join(checkpoint_folder, "pytorch_model.bin")
+        print("the pytorch model path is", pytorch_model_path)
         torch.save({}, pytorch_model_path)
         return control
 
@@ -86,8 +103,8 @@ def get_args():
     parser.add_argument("--num_workers", type=int, default=None)
     parser.add_argument("--output_dir", type=str, default="./checkpoints")
     parser.add_argument("--log_freq", default=1, type=int)
-    parser.add_argument("--eval_freq", default=1, type=int)
-    parser.add_argument("--save_freq", default=1000, type=int)
+    parser.add_argument("--eval_freq", default=10, type=int)
+    parser.add_argument("--save_freq", default=10, type=int)
     return parser.parse_args()
 
 
@@ -193,7 +210,7 @@ class ConstantLengthDataset(IterableDataset):
 
 
 def create_datasets(tokenizer, args):
-    dataset = load_dataset('json', data_files='/u/bzd2/ftdata.json',
+    dataset = load_dataset('json', data_files='/u/bzd2/data/train_ftdata-new-small.json',
         # args.dataset_name,
         data_dir=args.subset,
         split=args.split,
@@ -291,13 +308,13 @@ def run_training(args, train_data, val_data):
         fp16=not args.no_fp16,
         bf16=args.bf16,
         weight_decay=args.weight_decay,
-        run_name="StarCoder-finetuned",
+        run_name=f"FinalRuns-{args.output_dir}",
         report_to="wandb",
         ddp_find_unused_parameters=False,
     )
 
-    trainer = Trainer(model=model, args=training_args, train_dataset=train_data, eval_dataset=val_data, callbacks=[SavePeftModelCallback, PrintLossCallback()])
-
+    trainer = Trainer(model=model, args=training_args, train_dataset=train_data, eval_dataset=val_data, callbacks=[SavePeftModelCallback])
+    # trainer = Trainer(model=model, args=training_args, train_dataset=train_data, eval_dataset=val_data, compute_metrics=compute_similarity, callbacks=[SavePeftModelCallback])
     print("Training...")
     trainer.train()
 
@@ -306,7 +323,8 @@ def run_training(args, train_data, val_data):
 
 
 def main(args):
-    tokenizer = AutoTokenizer.from_pretrained(args.model_path, use_auth_token=True)
+
+    tokenizer = AutoTokenizer.from_pretrained(args.model_path, use_auth_token=True)    
     train_dataset, eval_dataset = create_datasets(tokenizer, args)
     # print(eval_dataset)
     run_training(args, train_dataset, eval_dataset)
@@ -327,6 +345,6 @@ if __name__ == "__main__":
 
 # use the command below to run this
 '''
-python3 -m torch.distributed.run --nproc_per_node=2 finetune/custom_fine_tune.py   --model_path="bigcode/starcoderbase-1b"  --dataset_name="ArmelR/stack-exchange-instruction"  --subset="data/finetune"  --split="train"  --size_valid_set 2000  --streaming  --seq_length 1024  --max_steps 100  --batch_size 1  --input_column_name="input"  --output_column_name="output" --gradient_accumulation_steps 16 --learning_rate 1e-4 --lr_scheduler_type="cosine" --num_warmup_steps 2 --weight_decay 0.05 --output_dir="./checkpoints" 
+python3 -m torch.distributed.run --nproc_per_node=2 finetune/custom_fine_tune.py  --model_path="bigcode/starcoder"  --subset="data/finetune"  --split="train"  --size_valid_set 8000  --streaming  --seq_length 2048  --max_steps 150  --batch_size 10  --input_column_name="input"  --output_column_name="output" --gradient_accumulation_steps 16 --learning_rate 1e-4 --lr_scheduler_type="cosine" --num_warmup_steps 2 --weight_decay 0.05 --output_dir="./checkpoints"  
 '''
 

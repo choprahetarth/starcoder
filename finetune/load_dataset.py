@@ -1,7 +1,11 @@
 from datasets import load_dataset
 
-# Load the dataset
-dataset = load_dataset('json', data_files='/home/bzd2/ansible-scraping/data/ftdata.json')
-print(dataset)
-# Print the total number of samples in the dataset
-print(dataset['train'].num_rows)
+def main():
+    # Load the dataset
+    dataset = load_dataset('json', data_files='/u/bzd2/data/train_ftdata-new.json')
+
+    # Print the total number of examples
+    print(f"Total number of examples: {len(dataset)}")
+
+if __name__ == "__main__":
+    main()
