@@ -18,7 +18,7 @@ import datetime
 """
 Fine-Tune StarCoder on Code Alpaca/SE
 """
-os.environ["TRANSFORMERS_CACHE"] = "/projects/bbvz/bzd2"
+os.environ["TRANSFORMERS_CACHE"] = "/projects/bbvz/choprahetarth"
 
 def compute_similarity(code1, code2):
     _, _, f1_score, _ = code_bert_score.score(cands=[code1], refs=[code2], lang='python')
@@ -74,8 +74,9 @@ class PrintLossCallback(TrainerCallback):
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model_path", type=str, default="bigcode/starcoder")
-    parser.add_argument("--dataset_name", type=str, default="HuggingFaceH4/CodeAlpaca_20K")
+    parser.add_argument("--model_path", type=str, default="")
+    parser.add_argument("--dataset_name", type=str, default="")
+    
     parser.add_argument("--subset", type=str)
     parser.add_argument("--split", type=str)
     parser.add_argument("--size_valid_set", type=int, default=10000)

@@ -50,8 +50,8 @@ class LoadBestPeftModelCallback(TrainerCallback):
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model_path", type=str, default="bigcode/large-model")
-    parser.add_argument("--dataset_name", type=str, default="HuggingFaceH4/CodeAlpaca_20K")
+    parser.add_argument("--model_path", type=str, default="")
+    parser.add_argument("--dataset_name", type=str, default="")
     parser.add_argument("--subset", type=str)
     parser.add_argument("--split", type=str)
     parser.add_argument("--size_valid_set", type=int, default=10000)
