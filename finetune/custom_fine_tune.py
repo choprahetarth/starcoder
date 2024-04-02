@@ -16,7 +16,7 @@ from transformers.trainer_utils import PREFIX_CHECKPOINT_DIR
 import datetime
 
 """
-Fine-Tune StarCoder on Code Alpaca/SE
+Fine-Tune StarCoder on Custom Dataset (bzd2/data/train_ftdata-new.json)
 """
 os.environ["TRANSFORMERS_CACHE"] = "/projects/bbvz/choprahetarth"
 
@@ -76,22 +76,36 @@ def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_path", type=str, default="")
     parser.add_argument("--dataset_name", type=str, default="")
-    
+
+    '''======================================================='''
+
     parser.add_argument("--subset", type=str)
     parser.add_argument("--split", type=str)
     parser.add_argument("--size_valid_set", type=int, default=10000)
     parser.add_argument("--streaming", action="store_true")
     parser.add_argument("--shuffle_buffer", type=int, default=5000)
+    
+    '''======================================================='''
+
     parser.add_argument("--input_column_name", type=str, default="input")
     parser.add_argument("--output_column_name", type=str, default="output")
+    
+    '''======================================================='''
+
     parser.add_argument("--seq_length", type=int, default=2048)
     parser.add_argument("--max_steps", type=int, default=10000)
     parser.add_argument("--batch_size", type=int, default=1)
     parser.add_argument("--gradient_accumulation_steps", type=int, default=16)
     parser.add_argument("--eos_token_id", type=int, default=49152)
+        
+    '''======================================================='''
+
     parser.add_argument("--lora_r", type=int, default=16)
     parser.add_argument("--lora_alpha", type=int, default=32)
     parser.add_argument("--lora_dropout", type=float, default=0.05)
+        
+    '''======================================================='''
+
     parser.add_argument("--learning_rate", type=float, default=5e-6)
     parser.add_argument("--lr_scheduler_type", type=str, default="cosine")
     parser.add_argument("--num_warmup_steps", type=int, default=100)

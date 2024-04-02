@@ -2,6 +2,9 @@ import json
 import random
 #from tqdm import tqdm
 
+'''
+This is to basically split the dataset into withheld and train dataset
+'''
 # Load the data from the json file
 with open('/u/bzd2/data/ftdata-new.json', 'r') as f:
     data = json.load(f)
