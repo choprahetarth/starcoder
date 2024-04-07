@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 print("Starting script...")
 
 import subprocess
@@ -13,6 +15,7 @@ def run_command(command):
 commands = [
     "pip install torch torchvision torchaudio",
     "pip install transformers",
+    "pip uninstall peft",
     "pip install git+https://github.com/huggingface/peft.git",
     "pip install git+https://github.com/huggingface/transformers",
     "pip install datasets",

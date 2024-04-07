@@ -7,7 +7,7 @@ from transformers import EvalPrediction
 import torch
 from accelerate import Accelerator
 from datasets import load_dataset
-from peft import LoraConfig, get_peft_model, prepare_model_for_int8_training, set_peft_model_state_dict
+from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training, set_peft_model_state_dict
 from torch.utils.data import IterableDataset
 from tqdm import tqdm
 from transformers import AutoConfig, AutoModelForCausalLM, AutoTokenizer, Trainer, TrainingArguments, logging, set_seed
@@ -284,7 +284,7 @@ def run_training(args, train_data, val_data):
         load_in_8bit=True,
         device_map={"": Accelerator().process_index},
     )
-    model = prepare_model_for_int8_training(model)
+    model = prepare_model_for_kbit_training(model)
 
     lora_config = LoraConfig(
         r=args.lora_r,
@@ -334,8 +334,9 @@ def run_training(args, train_data, val_data):
     trainer.train()
 
     print("Saving last checkpoint of the model")
-    model.save_pretrained(os.path.join(args.output_dir, "final_checkpoint/"))
-
+    model_path = args.model_path.split('/')[-1]  # Extracting the model name from the model path
+    checkpoint_name = f"final_checkpoint_{model_path}_lr_{args.learning_rate}_bs_{args.batch_size}_ms_{args.max_steps}"
+    model.save_pretrained(os.path.join(args.output_dir, checkpoint_name))
 
 def main(args):
 
