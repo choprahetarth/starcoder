@@ -86,7 +86,7 @@ def get_args():
     parser.add_argument("--shuffle_buffer", type=int, default=5000)
     
     '''======================================================='''
-
+    parser.add_argument("--data_path", type=str, default="/u/bzd2/data/train_ftdata-new-small.json")
     parser.add_argument("--input_column_name", type=str, default="input")
     parser.add_argument("--output_column_name", type=str, default="output")
     
@@ -225,7 +225,7 @@ class ConstantLengthDataset(IterableDataset):
 
 
 def create_datasets(tokenizer, args):
-    dataset = load_dataset('json', data_files='/u/bzd2/data/train_ftdata-new-small.json',
+    dataset = load_dataset('json', data_files=args.data_path,
         # args.dataset_name,
         data_dir=args.subset,
         split=args.split,
@@ -246,8 +246,8 @@ def create_datasets(tokenizer, args):
 
         train_data = train_data.shuffle(buffer_size=args.shuffle_buffer, seed=args.seed)
     else:
-        train_data = dataset["train"]
-        valid_data = dataset["test"]
+        valid_data = dataset.take(args.size_valid_set)
+        train_data = dataset.skip(args.size_valid_set)
         print(f"Size of the train set: {len(train_data)}. Size of the validation set: {len(valid_data)}")
 
     chars_per_token = chars_token_ratio(train_data, tokenizer, args.input_column_name, args.output_column_name)
@@ -335,7 +335,7 @@ def run_training(args, train_data, val_data):
 
     print("Saving last checkpoint of the model")
     model_path = args.model_path.split('/')[-1]  # Extracting the model name from the model path
-    checkpoint_name = f"final_checkpoint_{model_path}_lr_{args.learning_rate}_bs_{args.batch_size}_ms_{args.max_steps}"
+    checkpoint_name = f"final_checkpoint_{model_path}_lr_{args.learning_rate}_bs_{args.batch_size}_ms_{args.max_steps}_dp_{args.data_path}"
     model.save_pretrained(os.path.join(args.output_dir, checkpoint_name))
 
 def main(args):
