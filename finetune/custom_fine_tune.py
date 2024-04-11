@@ -234,6 +234,7 @@ def create_datasets(tokenizer, args):
         streaming=args.streaming,
     )
 
+    print("Loading the dataset")
     if args.streaming:
         print("Loading the dataset in streaming mode")
         valid_data = dataset.take(args.size_valid_set)
@@ -246,10 +247,10 @@ def create_datasets(tokenizer, args):
 
         train_data = train_data.shuffle(buffer_size=args.shuffle_buffer, seed=args.seed)
     else:
-        valid_data = dataset.take(args.size_valid_set)
-        train_data = dataset.skip(args.size_valid_set)
+        train_data = dataset["train"]
+        valid_data = dataset["test"]
         print(f"Size of the train set: {len(train_data)}. Size of the validation set: {len(valid_data)}")
-
+        
     chars_per_token = chars_token_ratio(train_data, tokenizer, args.input_column_name, args.output_column_name)
     print(f"The character to token ratio of the dataset is: {chars_per_token:.2f}")
 
@@ -284,8 +285,9 @@ def run_training(args, train_data, val_data):
         load_in_8bit=True,
         device_map={"": Accelerator().process_index},
     )
+    print("Started the causalLM Thing")
     model = prepare_model_for_kbit_training(model)
-
+    print("Prepared model for kbit training")
     lora_config = LoraConfig(
         r=args.lora_r,
         lora_alpha=args.lora_alpha,
@@ -294,11 +296,12 @@ def run_training(args, train_data, val_data):
         task_type="CAUSAL_LM",
         target_modules = ["c_proj", "c_attn", "q_attn"]
     )
+    print("lora config done")
 
     model = get_peft_model(model, lora_config)
-
+    print("peft model prepared")
     print_trainable_parameters(model)
-
+    print("model printed")
     train_data.start_iteration = 0
 
     print("Starting main loop")
