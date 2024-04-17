@@ -11,7 +11,7 @@ from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training, se
 from torch.utils.data import IterableDataset
 from tqdm import tqdm
 from transformers import AutoConfig, AutoModelForCausalLM, AutoTokenizer, Trainer, TrainingArguments, logging, set_seed
-from transformers import TrainerCallback, TrainingArguments, TrainerState, TrainerControl
+from transformers import TrainerCallback, TrainingArguments, TrainerState, TrainerControl, BitsAndBytesConfig
 from transformers.trainer_utils import PREFIX_CHECKPOINT_DIR
 import datetime
 
@@ -247,8 +247,9 @@ def create_datasets(tokenizer, args):
 
         train_data = train_data.shuffle(buffer_size=args.shuffle_buffer, seed=args.seed)
     else:
-        train_data = dataset["train"]
-        valid_data = dataset["test"]
+        dataset = dataset.shuffle(buffer_size=args.shuffle_buffer, seed=args.seed)
+        valid_data = dataset.take(args.size_valid_set)
+        train_data = dataset.skip(args.size_valid_set)
         print(f"Size of the train set: {len(train_data)}. Size of the validation set: {len(valid_data)}")
         
     chars_per_token = chars_token_ratio(train_data, tokenizer, args.input_column_name, args.output_column_name)
@@ -281,8 +282,9 @@ def run_training(args, train_data, val_data):
     model = AutoModelForCausalLM.from_pretrained(
         args.model_path,
         use_auth_token=True,
-        use_cache=not args.no_gradient_checkpointing,
-        load_in_8bit=True,
+        # use_cache=not args.no_gradient_checkpointing,
+        # quantization_config=quantization_config,  # Use `quantization_config` instead of `load_in_8bit`
+        load_in_8bit = True,
         device_map={"": Accelerator().process_index},
     )
     print("Started the causalLM Thing")

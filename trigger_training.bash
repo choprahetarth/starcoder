@@ -1,9 +1,9 @@
 #!/bin/bash
-#SBATCH --mem=400g
+#SBATCH --mem=100g
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=16     # <- match to OMP_NUM_THREADS
-#SBATCH --partition=gpuA100x8 # <- one of: gpuA100x4 gpuA40x4 gpuA100x8 gpuMI100x8
+#SBATCH --cpus-per-task=64     # <- match to OMP_NUM_THREADS
+#SBATCH --partition=gpuA100x4 # <- one of: gpuA100x4 gpuA40x4 gpuA100x8 gpuMI100x8
 #SBATCH --account='bbvz-delta-gpu'
 #SBATCH --job-name="finetune/custom_fine_tune.py"
 #SBATCH --time=30:00:00
@@ -29,7 +29,6 @@ export WANDB_API_KEY=e1b18fcb1054536d8c6958c02a175ddff40f4914
 export HF_API_KEY=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
 
 
-
 # chmod +x /u/choprahetarth/all_files/starcoder/finetune/*
 srun --account=bbvz-delta-gpu /u/choprahetarth/all_files/starcoder/finetune/environment_setup.py
 
@@ -42,22 +41,23 @@ finetune/custom_fine_tune.py \
 --split="train" \
 --streaming \
 --data_path="/u/choprahetarth/all_files/data/train_ftdata-new-small.json" \
---size_valid_set 20 \
+--size_valid_set 1525 \
 --seq_length 512 \
---max_steps 192 \
+--max_steps 214 \
 --batch_size 16 \
 --input_column_name="input" \
 --output_column_name="output" \
---gradient_accumulation_steps 16 \
+--gradient_accumulation_steps 8 \
 --learning_rate 1e-4 \
 --lr_scheduler_type="cosine" \
 --num_warmup_steps 2 \
 --weight_decay 0.05 \
---output_dir="/projects/bbvz/choprahetarth/new_experiments" \
+--output_dir="/projects/bbvz/choprahetarth/new_experiments/experiment_2" \
 --seed 1234 \
 --save_freq 10
 
 
 ## So the total dataset is 15246 rows
-## and the batch size is 32.
-## so ten percent of the dataset is (15246/16)*0.1 approx 96
+## and the total batch size across all GPUs is 256 (64*4 (gpus))
+## So one epoch is (13721/256) approx 60 batches
+## and ten percent of the dataset is 60*0.1 approx 6 batches
