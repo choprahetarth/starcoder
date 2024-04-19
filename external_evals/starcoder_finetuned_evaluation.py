@@ -12,7 +12,7 @@ from code_bert_score import BERTScorer
 from rouge_score import rouge_scorer
 
 def compute_rouge_scores(reference, candidate):
-    scorer = rouge_scorer.RougeScorer(['rouge1', 'rougeL'], use_stemmer=True)
+    scorer = rouge_scorer.RougeScorer(['rouge1', 'rouge2', 'rougeL'], use_stemmer=True)
     scores = scorer.score(reference, candidate)
     return scores
 
@@ -74,8 +74,31 @@ def main():
         codebertscore_f1 =  [compute_similarity(row, starcoder_response[i])[2] for i, row in enumerate(batch['output'])]
         codebertscore_f3 =  [compute_similarity(row, starcoder_response[i])[3] for i, row in enumerate(batch['output'])]
         bluescore =  [compute_bleu(row, starcoder_response[i]) for i, row in enumerate(batch['output'])]
+        rouge1_precision =  [compute_rouge_scores(row, starcoder_response[i])['rouge1'].precision for i, row in enumerate(batch['output'])]
+        rouge1_recall =  [compute_rouge_scores(row, starcoder_response[i])['rouge1'].recall for i, row in enumerate(batch['output'])]
+        rouge1_fmeasure =  [compute_rouge_scores(row, starcoder_response[i])['rouge1'].fmeasure for i, row in enumerate(batch['output'])]
+        rouge2_precision =  [compute_rouge_scores(row, starcoder_response[i])['rouge2'].precision for i, row in enumerate(batch['output'])]
+        rouge2_recall =  [compute_rouge_scores(row, starcoder_response[i])['rouge2'].recall for i, row in enumerate(batch['output'])]
+        rouge2_fmeasure =  [compute_rouge_scores(row, starcoder_response[i])['rouge2'].fmeasure for i, row in enumerate(batch['output'])]
+        rougeL_precision =  [compute_rouge_scores(row, starcoder_response[i])['rougeL'].precision for i, row in enumerate(batch['output'])]
+        rougeL_recall =  [compute_rouge_scores(row, starcoder_response[i])['rougeL'].recall for i, row in enumerate(batch['output'])]
+        rougeL_fmeasure =  [compute_rouge_scores(row, starcoder_response[i])['rougeL'].fmeasure for i, row in enumerate(batch['output'])]
         for i in range(len(starcoder_response)):
-            results.append([starcoder_response[i], codebertscore_precision[i], codebertscore_recall[i], codebertscore_f1[i], codebertscore_f3[i], bluescore[i]])
+            results.append([starcoder_response[i],
+                            codebertscore_precision[i],
+                            codebertscore_recall[i],
+                            codebertscore_f1[i],
+                            codebertscore_f3[i],
+                            bluescore[i],
+                            rouge1_precision[i],
+                            rouge1_recall[i],
+                            rouge1_fmeasure[i],
+                            rouge2_precision[i],
+                            rouge2_recall[i],
+                            rouge2_fmeasure[i],
+                            rougeL_precision[i],
+                            rougeL_recall[i],
+                            rougeL_fmeasure[i]])
 
     # Convert the results to a DataFrame
     df = pd.DataFrame(results, columns=['starcoder_response', 'codebertscore', 'bluescore'])
