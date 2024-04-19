@@ -10,6 +10,8 @@ from tqdm import tqdm
 from datasets import load_dataset
 from code_bert_score import BERTScorer
 from rouge_score import rouge_scorer
+# from sacrebleu.metrics import BLEU, CHRF, TER
+# ask dave to give the code for BLEU that he used, plus ansible aware
 
 def compute_rouge_scores(reference, candidate):
     scorer = rouge_scorer.RougeScorer(['rouge1', 'rouge2', 'rougeL'], use_stemmer=True)
@@ -73,7 +75,7 @@ def main():
         codebertscore_recall =  [compute_similarity(row, starcoder_response[i])[1] for i, row in enumerate(batch['output'])]
         codebertscore_f1 =  [compute_similarity(row, starcoder_response[i])[2] for i, row in enumerate(batch['output'])]
         codebertscore_f3 =  [compute_similarity(row, starcoder_response[i])[3] for i, row in enumerate(batch['output'])]
-        bluescore =  [compute_bleu(row, starcoder_response[i]) for i, row in enumerate(batch['output'])]
+        sentence_bluescore =  [compute_bleu(row, starcoder_response[i]) for i, row in enumerate(batch['output'])]
         rouge1_precision =  [compute_rouge_scores(row, starcoder_response[i])['rouge1'].precision for i, row in enumerate(batch['output'])]
         rouge1_recall =  [compute_rouge_scores(row, starcoder_response[i])['rouge1'].recall for i, row in enumerate(batch['output'])]
         rouge1_fmeasure =  [compute_rouge_scores(row, starcoder_response[i])['rouge1'].fmeasure for i, row in enumerate(batch['output'])]
@@ -89,7 +91,7 @@ def main():
                             codebertscore_recall[i],
                             codebertscore_f1[i],
                             codebertscore_f3[i],
-                            bluescore[i],
+                            sentence_bluescore[i],
                             rouge1_precision[i],
                             rouge1_recall[i],
                             rouge1_fmeasure[i],
@@ -101,7 +103,21 @@ def main():
                             rougeL_fmeasure[i]])
 
     # Convert the results to a DataFrame
-    df = pd.DataFrame(results, columns=['starcoder_response', 'codebertscore', 'bluescore'])
+    df = pd.DataFrame(results, columns=['starcoder_response', 
+                                        'codebertscore_precision', 
+                                        'codebertscore_recall', 
+                                        'codebertscore_f1', 
+                                        'codebertscore_f3', 
+                                        'sentence_bluescore', 
+                                        'rouge1_precision', 
+                                        'rouge1_recall', 
+                                        'rouge1_fmeasure', 
+                                        'rouge2_precision', 
+                                        'rouge2_recall', 
+                                        'rouge2_fmeasure', 
+                                        'rougeL_precision', 
+                                        'rougeL_recall', 
+                                        'rougeL_fmeasure'])
     # Save the DataFrame to a csv file
     df.to_csv(f'{args.save}-finetuned_starcoder_comparison.csv', index=True)
 
