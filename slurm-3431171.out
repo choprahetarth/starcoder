@@ -1,0 +1,1011 @@
+Running "module reset". Resetting modules to system default. The following $MODULEPATH directories have been removed: None
+Starting script...
+Output: Requirement already satisfied: torch in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (2.2.2)
+Requirement already satisfied: torchvision in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (0.17.2)
+Requirement already satisfied: torchaudio in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (2.2.2)
+Requirement already satisfied: filelock in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch) (3.13.4)
+Requirement already satisfied: typing-extensions>=4.8.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch) (4.11.0)
+Requirement already satisfied: sympy in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch) (1.12)
+Requirement already satisfied: networkx in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch) (3.3)
+Requirement already satisfied: jinja2 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch) (3.1.3)
+Requirement already satisfied: fsspec in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch) (2024.2.0)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.1.105 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch) (12.1.105)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.1.105 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch) (12.1.105)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.1.105 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch) (12.1.105)
+Requirement already satisfied: nvidia-cudnn-cu12==8.9.2.26 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch) (8.9.2.26)
+Requirement already satisfied: nvidia-cublas-cu12==12.1.3.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch) (12.1.3.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.0.2.54 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch) (11.0.2.54)
+Requirement already satisfied: nvidia-curand-cu12==10.3.2.106 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch) (10.3.2.106)
+Requirement already satisfied: nvidia-cusolver-cu12==11.4.5.107 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch) (11.4.5.107)
+Requirement already satisfied: nvidia-cusparse-cu12==12.1.0.106 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch) (12.1.0.106)
+Requirement already satisfied: nvidia-nccl-cu12==2.19.3 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch) (2.19.3)
+Requirement already satisfied: nvidia-nvtx-cu12==12.1.105 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch) (12.1.105)
+Requirement already satisfied: triton==2.2.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch) (2.2.0)
+Requirement already satisfied: nvidia-nvjitlink-cu12 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from nvidia-cusolver-cu12==11.4.5.107->torch) (12.4.127)
+Requirement already satisfied: numpy in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torchvision) (1.26.4)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torchvision) (10.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from jinja2->torch) (2.1.5)
+Requirement already satisfied: mpmath>=0.19 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from sympy->torch) (1.3.0)
+
+Output: Requirement already satisfied: transformers in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (4.40.0.dev0)
+Requirement already satisfied: filelock in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from transformers) (3.13.4)
+Requirement already satisfied: huggingface-hub<1.0,>=0.19.3 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from transformers) (0.22.2)
+Requirement already satisfied: numpy>=1.17 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from transformers) (1.26.4)
+Requirement already satisfied: packaging>=20.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from transformers) (24.0)
+Requirement already satisfied: pyyaml>=5.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from transformers) (6.0.1)
+Requirement already satisfied: regex!=2019.12.17 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from transformers) (2023.12.25)
+Requirement already satisfied: requests in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from transformers) (2.31.0)
+Requirement already satisfied: tokenizers<0.19,>=0.14 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from transformers) (0.15.2)
+Requirement already satisfied: safetensors>=0.4.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from transformers) (0.4.2)
+Requirement already satisfied: tqdm>=4.27 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from transformers) (4.66.2)
+Requirement already satisfied: fsspec>=2023.5.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from huggingface-hub<1.0,>=0.19.3->transformers) (2024.2.0)
+Requirement already satisfied: typing-extensions>=3.7.4.3 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from huggingface-hub<1.0,>=0.19.3->transformers) (4.11.0)
+Requirement already satisfied: charset-normalizer<4,>=2 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests->transformers) (3.3.2)
+Requirement already satisfied: idna<4,>=2.5 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests->transformers) (3.7)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests->transformers) (2.2.1)
+Requirement already satisfied: certifi>=2017.4.17 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests->transformers) (2024.2.2)
+
+Output: Found existing installation: peft 0.10.1.dev0
+Uninstalling peft-0.10.1.dev0:
+  Would remove:
+    /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/peft-0.10.1.dev0.dist-info/*
+    /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/peft/*
+Proceed (Y/n)?   Successfully uninstalled peft-0.10.1.dev0
+
+Output: Collecting git+https://github.com/huggingface/peft.git
+  Cloning https://github.com/huggingface/peft.git to /tmp/pip-req-build-68acdt_n
+  Resolved https://github.com/huggingface/peft.git to commit ed865e2812bd4bf3946292430525d0825b0fab7e
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: numpy>=1.17 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from peft==0.10.1.dev0) (1.26.4)
+Requirement already satisfied: packaging>=20.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from peft==0.10.1.dev0) (24.0)
+Requirement already satisfied: psutil in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from peft==0.10.1.dev0) (5.9.8)
+Requirement already satisfied: pyyaml in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from peft==0.10.1.dev0) (6.0.1)
+Requirement already satisfied: torch>=1.13.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from peft==0.10.1.dev0) (2.2.2)
+Requirement already satisfied: transformers in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from peft==0.10.1.dev0) (4.40.0.dev0)
+Requirement already satisfied: tqdm in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from peft==0.10.1.dev0) (4.66.2)
+Requirement already satisfied: accelerate>=0.21.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from peft==0.10.1.dev0) (0.27.2)
+Requirement already satisfied: safetensors in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from peft==0.10.1.dev0) (0.4.2)
+Requirement already satisfied: huggingface-hub>=0.17.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from peft==0.10.1.dev0) (0.22.2)
+Requirement already satisfied: filelock in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from huggingface-hub>=0.17.0->peft==0.10.1.dev0) (3.13.4)
+Requirement already satisfied: fsspec>=2023.5.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from huggingface-hub>=0.17.0->peft==0.10.1.dev0) (2024.2.0)
+Requirement already satisfied: requests in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from huggingface-hub>=0.17.0->peft==0.10.1.dev0) (2.31.0)
+Requirement already satisfied: typing-extensions>=3.7.4.3 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from huggingface-hub>=0.17.0->peft==0.10.1.dev0) (4.11.0)
+Requirement already satisfied: sympy in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.13.0->peft==0.10.1.dev0) (1.12)
+Requirement already satisfied: networkx in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.13.0->peft==0.10.1.dev0) (3.3)
+Requirement already satisfied: jinja2 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.13.0->peft==0.10.1.dev0) (3.1.3)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.1.105 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.13.0->peft==0.10.1.dev0) (12.1.105)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.1.105 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.13.0->peft==0.10.1.dev0) (12.1.105)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.1.105 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.13.0->peft==0.10.1.dev0) (12.1.105)
+Requirement already satisfied: nvidia-cudnn-cu12==8.9.2.26 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.13.0->peft==0.10.1.dev0) (8.9.2.26)
+Requirement already satisfied: nvidia-cublas-cu12==12.1.3.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.13.0->peft==0.10.1.dev0) (12.1.3.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.0.2.54 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.13.0->peft==0.10.1.dev0) (11.0.2.54)
+Requirement already satisfied: nvidia-curand-cu12==10.3.2.106 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.13.0->peft==0.10.1.dev0) (10.3.2.106)
+Requirement already satisfied: nvidia-cusolver-cu12==11.4.5.107 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.13.0->peft==0.10.1.dev0) (11.4.5.107)
+Requirement already satisfied: nvidia-cusparse-cu12==12.1.0.106 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.13.0->peft==0.10.1.dev0) (12.1.0.106)
+Requirement already satisfied: nvidia-nccl-cu12==2.19.3 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.13.0->peft==0.10.1.dev0) (2.19.3)
+Requirement already satisfied: nvidia-nvtx-cu12==12.1.105 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.13.0->peft==0.10.1.dev0) (12.1.105)
+Requirement already satisfied: triton==2.2.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.13.0->peft==0.10.1.dev0) (2.2.0)
+Requirement already satisfied: nvidia-nvjitlink-cu12 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from nvidia-cusolver-cu12==11.4.5.107->torch>=1.13.0->peft==0.10.1.dev0) (12.4.127)
+Requirement already satisfied: regex!=2019.12.17 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from transformers->peft==0.10.1.dev0) (2023.12.25)
+Requirement already satisfied: tokenizers<0.19,>=0.14 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from transformers->peft==0.10.1.dev0) (0.15.2)
+Requirement already satisfied: MarkupSafe>=2.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from jinja2->torch>=1.13.0->peft==0.10.1.dev0) (2.1.5)
+Requirement already satisfied: charset-normalizer<4,>=2 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests->huggingface-hub>=0.17.0->peft==0.10.1.dev0) (3.3.2)
+Requirement already satisfied: idna<4,>=2.5 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests->huggingface-hub>=0.17.0->peft==0.10.1.dev0) (3.7)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests->huggingface-hub>=0.17.0->peft==0.10.1.dev0) (2.2.1)
+Requirement already satisfied: certifi>=2017.4.17 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests->huggingface-hub>=0.17.0->peft==0.10.1.dev0) (2024.2.2)
+Requirement already satisfied: mpmath>=0.19 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from sympy->torch>=1.13.0->peft==0.10.1.dev0) (1.3.0)
+Building wheels for collected packages: peft
+  Building wheel for peft (pyproject.toml): started
+  Building wheel for peft (pyproject.toml): finished with status 'done'
+  Created wheel for peft: filename=peft-0.10.1.dev0-py3-none-any.whl size=218560 sha256=0a43257c7f0cb23b3d048291373b74db3bd57e937d398d8e2b6994fa7ed1c1e4
+  Stored in directory: /tmp/pip-ephem-wheel-cache-xpkjiu3t/wheels/d7/c7/de/1368fac8590e1b103ddc2ec2a28ad51d83aded1a3830e8a087
+Successfully built peft
+Installing collected packages: peft
+Successfully installed peft-0.10.1.dev0
+
+Output: Collecting git+https://github.com/huggingface/transformers
+  Cloning https://github.com/huggingface/transformers to /tmp/pip-req-build-ed5i8r7c
+  Resolved https://github.com/huggingface/transformers to commit ec92f983af5295fc92414a37b988d8384785988a
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: filelock in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from transformers==4.40.0.dev0) (3.13.4)
+Requirement already satisfied: huggingface-hub<1.0,>=0.19.3 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from transformers==4.40.0.dev0) (0.22.2)
+Requirement already satisfied: numpy>=1.17 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from transformers==4.40.0.dev0) (1.26.4)
+Requirement already satisfied: packaging>=20.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from transformers==4.40.0.dev0) (24.0)
+Requirement already satisfied: pyyaml>=5.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from transformers==4.40.0.dev0) (6.0.1)
+Requirement already satisfied: regex!=2019.12.17 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from transformers==4.40.0.dev0) (2023.12.25)
+Requirement already satisfied: requests in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from transformers==4.40.0.dev0) (2.31.0)
+Collecting tokenizers<0.20,>=0.19 (from transformers==4.40.0.dev0)
+  Using cached tokenizers-0.19.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.7 kB)
+Requirement already satisfied: safetensors>=0.4.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from transformers==4.40.0.dev0) (0.4.2)
+Requirement already satisfied: tqdm>=4.27 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from transformers==4.40.0.dev0) (4.66.2)
+Requirement already satisfied: fsspec>=2023.5.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from huggingface-hub<1.0,>=0.19.3->transformers==4.40.0.dev0) (2024.2.0)
+Requirement already satisfied: typing-extensions>=3.7.4.3 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from huggingface-hub<1.0,>=0.19.3->transformers==4.40.0.dev0) (4.11.0)
+Requirement already satisfied: charset-normalizer<4,>=2 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests->transformers==4.40.0.dev0) (3.3.2)
+Requirement already satisfied: idna<4,>=2.5 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests->transformers==4.40.0.dev0) (3.7)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests->transformers==4.40.0.dev0) (2.2.1)
+Requirement already satisfied: certifi>=2017.4.17 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests->transformers==4.40.0.dev0) (2024.2.2)
+Using cached tokenizers-0.19.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.6 MB)
+Installing collected packages: tokenizers
+  Attempting uninstall: tokenizers
+    Found existing installation: tokenizers 0.15.2
+    Uninstalling tokenizers-0.15.2:
+      Successfully uninstalled tokenizers-0.15.2
+Successfully installed tokenizers-0.19.0
+
+Output: Requirement already satisfied: datasets in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (2.18.0)
+Requirement already satisfied: filelock in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from datasets) (3.13.4)
+Requirement already satisfied: numpy>=1.17 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from datasets) (1.26.4)
+Requirement already satisfied: pyarrow>=12.0.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from datasets) (15.0.2)
+Requirement already satisfied: pyarrow-hotfix in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from datasets) (0.6)
+Requirement already satisfied: dill<0.3.9,>=0.3.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from datasets) (0.3.8)
+Requirement already satisfied: pandas in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from datasets) (2.2.2)
+Requirement already satisfied: requests>=2.19.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from datasets) (2.31.0)
+Requirement already satisfied: tqdm>=4.62.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from datasets) (4.66.2)
+Requirement already satisfied: xxhash in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from datasets) (3.4.1)
+Requirement already satisfied: multiprocess in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from datasets) (0.70.16)
+Requirement already satisfied: fsspec<=2024.2.0,>=2023.1.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from fsspec[http]<=2024.2.0,>=2023.1.0->datasets) (2024.2.0)
+Requirement already satisfied: aiohttp in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from datasets) (3.9.3)
+Requirement already satisfied: huggingface-hub>=0.19.4 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from datasets) (0.22.2)
+Requirement already satisfied: packaging in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from datasets) (24.0)
+Requirement already satisfied: pyyaml>=5.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from datasets) (6.0.1)
+Requirement already satisfied: aiosignal>=1.1.2 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from aiohttp->datasets) (1.3.1)
+Requirement already satisfied: attrs>=17.3.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from aiohttp->datasets) (23.2.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from aiohttp->datasets) (1.4.1)
+Requirement already satisfied: multidict<7.0,>=4.5 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from aiohttp->datasets) (6.0.5)
+Requirement already satisfied: yarl<2.0,>=1.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from aiohttp->datasets) (1.9.4)
+Requirement already satisfied: async-timeout<5.0,>=4.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from aiohttp->datasets) (4.0.3)
+Requirement already satisfied: typing-extensions>=3.7.4.3 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from huggingface-hub>=0.19.4->datasets) (4.11.0)
+Requirement already satisfied: charset-normalizer<4,>=2 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests>=2.19.0->datasets) (3.3.2)
+Requirement already satisfied: idna<4,>=2.5 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests>=2.19.0->datasets) (3.7)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests>=2.19.0->datasets) (2.2.1)
+Requirement already satisfied: certifi>=2017.4.17 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests>=2.19.0->datasets) (2024.2.2)
+Requirement already satisfied: python-dateutil>=2.8.2 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from pandas->datasets) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from pandas->datasets) (2024.1)
+Requirement already satisfied: tzdata>=2022.7 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from pandas->datasets) (2024.1)
+Requirement already satisfied: six>=1.5 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from python-dateutil>=2.8.2->pandas->datasets) (1.16.0)
+
+Output: Requirement already satisfied: accelerate in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (0.27.2)
+Requirement already satisfied: numpy>=1.17 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from accelerate) (1.26.4)
+Requirement already satisfied: packaging>=20.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from accelerate) (24.0)
+Requirement already satisfied: psutil in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from accelerate) (5.9.8)
+Requirement already satisfied: pyyaml in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from accelerate) (6.0.1)
+Requirement already satisfied: torch>=1.10.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from accelerate) (2.2.2)
+Requirement already satisfied: huggingface-hub in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from accelerate) (0.22.2)
+Requirement already satisfied: safetensors>=0.3.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from accelerate) (0.4.2)
+Requirement already satisfied: filelock in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.10.0->accelerate) (3.13.4)
+Requirement already satisfied: typing-extensions>=4.8.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.10.0->accelerate) (4.11.0)
+Requirement already satisfied: sympy in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.10.0->accelerate) (1.12)
+Requirement already satisfied: networkx in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.10.0->accelerate) (3.3)
+Requirement already satisfied: jinja2 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.10.0->accelerate) (3.1.3)
+Requirement already satisfied: fsspec in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.10.0->accelerate) (2024.2.0)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.1.105 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.10.0->accelerate) (12.1.105)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.1.105 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.10.0->accelerate) (12.1.105)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.1.105 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.10.0->accelerate) (12.1.105)
+Requirement already satisfied: nvidia-cudnn-cu12==8.9.2.26 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.10.0->accelerate) (8.9.2.26)
+Requirement already satisfied: nvidia-cublas-cu12==12.1.3.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.10.0->accelerate) (12.1.3.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.0.2.54 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.10.0->accelerate) (11.0.2.54)
+Requirement already satisfied: nvidia-curand-cu12==10.3.2.106 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.10.0->accelerate) (10.3.2.106)
+Requirement already satisfied: nvidia-cusolver-cu12==11.4.5.107 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.10.0->accelerate) (11.4.5.107)
+Requirement already satisfied: nvidia-cusparse-cu12==12.1.0.106 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.10.0->accelerate) (12.1.0.106)
+Requirement already satisfied: nvidia-nccl-cu12==2.19.3 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.10.0->accelerate) (2.19.3)
+Requirement already satisfied: nvidia-nvtx-cu12==12.1.105 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.10.0->accelerate) (12.1.105)
+Requirement already satisfied: triton==2.2.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.10.0->accelerate) (2.2.0)
+Requirement already satisfied: nvidia-nvjitlink-cu12 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from nvidia-cusolver-cu12==11.4.5.107->torch>=1.10.0->accelerate) (12.4.127)
+Requirement already satisfied: requests in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from huggingface-hub->accelerate) (2.31.0)
+Requirement already satisfied: tqdm>=4.42.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from huggingface-hub->accelerate) (4.66.2)
+Requirement already satisfied: MarkupSafe>=2.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from jinja2->torch>=1.10.0->accelerate) (2.1.5)
+Requirement already satisfied: charset-normalizer<4,>=2 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests->huggingface-hub->accelerate) (3.3.2)
+Requirement already satisfied: idna<4,>=2.5 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests->huggingface-hub->accelerate) (3.7)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests->huggingface-hub->accelerate) (2.2.1)
+Requirement already satisfied: certifi>=2017.4.17 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests->huggingface-hub->accelerate) (2024.2.2)
+Requirement already satisfied: mpmath>=0.19 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from sympy->torch>=1.10.0->accelerate) (1.3.0)
+
+Output: Requirement already satisfied: huggingface_hub in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (0.22.2)
+Requirement already satisfied: filelock in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from huggingface_hub) (3.13.4)
+Requirement already satisfied: fsspec>=2023.5.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from huggingface_hub) (2024.2.0)
+Requirement already satisfied: packaging>=20.9 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from huggingface_hub) (24.0)
+Requirement already satisfied: pyyaml>=5.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from huggingface_hub) (6.0.1)
+Requirement already satisfied: requests in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from huggingface_hub) (2.31.0)
+Requirement already satisfied: tqdm>=4.42.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from huggingface_hub) (4.66.2)
+Requirement already satisfied: typing-extensions>=3.7.4.3 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from huggingface_hub) (4.11.0)
+Requirement already satisfied: charset-normalizer<4,>=2 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests->huggingface_hub) (3.3.2)
+Requirement already satisfied: idna<4,>=2.5 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests->huggingface_hub) (3.7)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests->huggingface_hub) (2.2.1)
+Requirement already satisfied: certifi>=2017.4.17 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests->huggingface_hub) (2024.2.2)
+
+Output: Requirement already satisfied: bitsandbytes in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (0.43.0)
+Requirement already satisfied: torch in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from bitsandbytes) (2.2.2)
+Requirement already satisfied: numpy in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from bitsandbytes) (1.26.4)
+Requirement already satisfied: filelock in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch->bitsandbytes) (3.13.4)
+Requirement already satisfied: typing-extensions>=4.8.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch->bitsandbytes) (4.11.0)
+Requirement already satisfied: sympy in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch->bitsandbytes) (1.12)
+Requirement already satisfied: networkx in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch->bitsandbytes) (3.3)
+Requirement already satisfied: jinja2 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch->bitsandbytes) (3.1.3)
+Requirement already satisfied: fsspec in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch->bitsandbytes) (2024.2.0)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.1.105 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch->bitsandbytes) (12.1.105)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.1.105 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch->bitsandbytes) (12.1.105)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.1.105 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch->bitsandbytes) (12.1.105)
+Requirement already satisfied: nvidia-cudnn-cu12==8.9.2.26 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch->bitsandbytes) (8.9.2.26)
+Requirement already satisfied: nvidia-cublas-cu12==12.1.3.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch->bitsandbytes) (12.1.3.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.0.2.54 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch->bitsandbytes) (11.0.2.54)
+Requirement already satisfied: nvidia-curand-cu12==10.3.2.106 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch->bitsandbytes) (10.3.2.106)
+Requirement already satisfied: nvidia-cusolver-cu12==11.4.5.107 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch->bitsandbytes) (11.4.5.107)
+Requirement already satisfied: nvidia-cusparse-cu12==12.1.0.106 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch->bitsandbytes) (12.1.0.106)
+Requirement already satisfied: nvidia-nccl-cu12==2.19.3 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch->bitsandbytes) (2.19.3)
+Requirement already satisfied: nvidia-nvtx-cu12==12.1.105 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch->bitsandbytes) (12.1.105)
+Requirement already satisfied: triton==2.2.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch->bitsandbytes) (2.2.0)
+Requirement already satisfied: nvidia-nvjitlink-cu12 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from nvidia-cusolver-cu12==11.4.5.107->torch->bitsandbytes) (12.4.127)
+Requirement already satisfied: MarkupSafe>=2.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from jinja2->torch->bitsandbytes) (2.1.5)
+Requirement already satisfied: mpmath>=0.19 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from sympy->torch->bitsandbytes) (1.3.0)
+
+Output: Requirement already satisfied: wandb in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (0.16.6)
+Requirement already satisfied: Click!=8.0.0,>=7.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from wandb) (8.1.7)
+Requirement already satisfied: GitPython!=3.1.29,>=1.0.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from wandb) (3.1.43)
+Requirement already satisfied: requests<3,>=2.0.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from wandb) (2.31.0)
+Requirement already satisfied: psutil>=5.0.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from wandb) (5.9.8)
+Requirement already satisfied: sentry-sdk>=1.0.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from wandb) (1.45.0)
+Requirement already satisfied: docker-pycreds>=0.4.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from wandb) (0.4.0)
+Requirement already satisfied: PyYAML in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from wandb) (6.0.1)
+Requirement already satisfied: setproctitle in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from wandb) (1.3.3)
+Requirement already satisfied: setuptools in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from wandb) (68.2.2)
+Requirement already satisfied: appdirs>=1.4.3 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from wandb) (1.4.4)
+Requirement already satisfied: protobuf!=4.21.0,<5,>=3.19.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from wandb) (4.25.3)
+Requirement already satisfied: six>=1.4.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from docker-pycreds>=0.4.0->wandb) (1.16.0)
+Requirement already satisfied: gitdb<5,>=4.0.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from GitPython!=3.1.29,>=1.0.0->wandb) (4.0.11)
+Requirement already satisfied: charset-normalizer<4,>=2 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests<3,>=2.0.0->wandb) (3.3.2)
+Requirement already satisfied: idna<4,>=2.5 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests<3,>=2.0.0->wandb) (3.7)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests<3,>=2.0.0->wandb) (2.2.1)
+Requirement already satisfied: certifi>=2017.4.17 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests<3,>=2.0.0->wandb) (2024.2.2)
+Requirement already satisfied: smmap<6,>=3.0.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from gitdb<5,>=4.0.1->GitPython!=3.1.29,>=1.0.0->wandb) (5.0.1)
+
+Output: Requirement already satisfied: scikit-learn in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (1.4.2)
+Requirement already satisfied: numpy>=1.19.5 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from scikit-learn) (1.26.4)
+Requirement already satisfied: scipy>=1.6.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from scikit-learn) (1.13.0)
+Requirement already satisfied: joblib>=1.2.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from scikit-learn) (1.4.0)
+Requirement already satisfied: threadpoolctl>=2.0.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from scikit-learn) (3.4.0)
+
+Output: Requirement already satisfied: code_bert_score in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (0.4.1)
+Requirement already satisfied: torch>=1.0.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from code_bert_score) (2.2.2)
+Requirement already satisfied: numpy in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from code_bert_score) (1.26.4)
+Requirement already satisfied: pandas>=1.0.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from code_bert_score) (2.2.2)
+Requirement already satisfied: requests in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from code_bert_score) (2.31.0)
+Requirement already satisfied: tqdm>=4.31.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from code_bert_score) (4.66.2)
+Requirement already satisfied: matplotlib in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from code_bert_score) (3.8.4)
+Requirement already satisfied: transformers>=3.0.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from code_bert_score) (4.40.0.dev0)
+Requirement already satisfied: python-dateutil>=2.8.2 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from pandas>=1.0.1->code_bert_score) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from pandas>=1.0.1->code_bert_score) (2024.1)
+Requirement already satisfied: tzdata>=2022.7 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from pandas>=1.0.1->code_bert_score) (2024.1)
+Requirement already satisfied: filelock in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.0.0->code_bert_score) (3.13.4)
+Requirement already satisfied: typing-extensions>=4.8.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.0.0->code_bert_score) (4.11.0)
+Requirement already satisfied: sympy in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.0.0->code_bert_score) (1.12)
+Requirement already satisfied: networkx in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.0.0->code_bert_score) (3.3)
+Requirement already satisfied: jinja2 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.0.0->code_bert_score) (3.1.3)
+Requirement already satisfied: fsspec in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.0.0->code_bert_score) (2024.2.0)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.1.105 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.0.0->code_bert_score) (12.1.105)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.1.105 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.0.0->code_bert_score) (12.1.105)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.1.105 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.0.0->code_bert_score) (12.1.105)
+Requirement already satisfied: nvidia-cudnn-cu12==8.9.2.26 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.0.0->code_bert_score) (8.9.2.26)
+Requirement already satisfied: nvidia-cublas-cu12==12.1.3.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.0.0->code_bert_score) (12.1.3.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.0.2.54 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.0.0->code_bert_score) (11.0.2.54)
+Requirement already satisfied: nvidia-curand-cu12==10.3.2.106 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.0.0->code_bert_score) (10.3.2.106)
+Requirement already satisfied: nvidia-cusolver-cu12==11.4.5.107 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.0.0->code_bert_score) (11.4.5.107)
+Requirement already satisfied: nvidia-cusparse-cu12==12.1.0.106 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.0.0->code_bert_score) (12.1.0.106)
+Requirement already satisfied: nvidia-nccl-cu12==2.19.3 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.0.0->code_bert_score) (2.19.3)
+Requirement already satisfied: nvidia-nvtx-cu12==12.1.105 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.0.0->code_bert_score) (12.1.105)
+Requirement already satisfied: triton==2.2.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from torch>=1.0.0->code_bert_score) (2.2.0)
+Requirement already satisfied: nvidia-nvjitlink-cu12 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from nvidia-cusolver-cu12==11.4.5.107->torch>=1.0.0->code_bert_score) (12.4.127)
+Requirement already satisfied: huggingface-hub<1.0,>=0.19.3 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from transformers>=3.0.0->code_bert_score) (0.22.2)
+Requirement already satisfied: packaging>=20.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from transformers>=3.0.0->code_bert_score) (24.0)
+Requirement already satisfied: pyyaml>=5.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from transformers>=3.0.0->code_bert_score) (6.0.1)
+Requirement already satisfied: regex!=2019.12.17 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from transformers>=3.0.0->code_bert_score) (2023.12.25)
+Collecting tokenizers<0.19,>=0.14 (from transformers>=3.0.0->code_bert_score)
+  Using cached tokenizers-0.15.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.7 kB)
+Requirement already satisfied: safetensors>=0.4.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from transformers>=3.0.0->code_bert_score) (0.4.2)
+Requirement already satisfied: contourpy>=1.0.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from matplotlib->code_bert_score) (1.2.1)
+Requirement already satisfied: cycler>=0.10 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from matplotlib->code_bert_score) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from matplotlib->code_bert_score) (4.51.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from matplotlib->code_bert_score) (1.4.5)
+Requirement already satisfied: pillow>=8 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from matplotlib->code_bert_score) (10.3.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from matplotlib->code_bert_score) (3.1.2)
+Requirement already satisfied: charset-normalizer<4,>=2 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests->code_bert_score) (3.3.2)
+Requirement already satisfied: idna<4,>=2.5 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests->code_bert_score) (3.7)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests->code_bert_score) (2.2.1)
+Requirement already satisfied: certifi>=2017.4.17 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from requests->code_bert_score) (2024.2.2)
+Requirement already satisfied: six>=1.5 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from python-dateutil>=2.8.2->pandas>=1.0.1->code_bert_score) (1.16.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from jinja2->torch>=1.0.0->code_bert_score) (2.1.5)
+Requirement already satisfied: mpmath>=0.19 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from sympy->torch>=1.0.0->code_bert_score) (1.3.0)
+Using cached tokenizers-0.15.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.6 MB)
+Installing collected packages: tokenizers
+  Attempting uninstall: tokenizers
+    Found existing installation: tokenizers 0.19.0
+    Uninstalling tokenizers-0.19.0:
+      Successfully uninstalled tokenizers-0.19.0
+Successfully installed tokenizers-0.15.2
+
+Output: Requirement already satisfied: nltk in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (3.8.1)
+Requirement already satisfied: click in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from nltk) (8.1.7)
+Requirement already satisfied: joblib in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from nltk) (1.4.0)
+Requirement already satisfied: regex>=2021.8.3 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from nltk) (2023.12.25)
+Requirement already satisfied: tqdm in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages (from nltk) (4.66.2)
+
+WARNING:__main__:
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py:747: FutureWarning: The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.
+  warnings.warn(
+/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py:747: FutureWarning: The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.
+  warnings.warn(
+/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py:747: FutureWarning: The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.
+  warnings.warn(
+/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py:747: FutureWarning: The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.
+  warnings.warn(
+loading file vocab.json from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/vocab.json
+loading file merges.txt from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/merges.txt
+loading file tokenizer.json from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/tokenizer.json
+loading file added_tokens.json from cache at None
+loading file special_tokens_map.json from cache at None
+loading file tokenizer_config.json from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/tokenizer_config.json
+loading file vocab.json from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/vocab.json
+loading file merges.txt from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/merges.txt
+loading file tokenizer.json from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/tokenizer.json
+loading file added_tokens.json from cache at None
+loading file special_tokens_map.json from cache at None
+loading file tokenizer_config.json from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/tokenizer_config.json
+loading file vocab.json from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/vocab.json
+loading file merges.txt from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/merges.txt
+loading file tokenizer.json from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/tokenizer.json
+loading file added_tokens.json from cache at None
+loading file special_tokens_map.json from cache at None
+loading file tokenizer_config.json from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/tokenizer_config.json
+loading file vocab.json from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/vocab.json
+loading file merges.txt from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/merges.txt
+loading file tokenizer.json from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/tokenizer.json
+loading file added_tokens.json from cache at None
+loading file special_tokens_map.json from cache at None
+loading file tokenizer_config.json from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/tokenizer_config.json
+/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/datasets/load.py:2516: FutureWarning: 'use_auth_token' was deprecated in favor of 'token' in version 2.14.0 and will be removed in 3.0.0.
+You can remove this warning by passing 'token=<use_auth_token>' instead.
+  warnings.warn(
+Loading the dataset
+Loading the dataset in streaming mode
+Loading the dataset
+Loading the dataset in streaming mode
+Loading the dataset
+Loading the dataset in streaming mode
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: SCORED | 18.2.3 | PATCH | L1 Ensure Enable Local Admin Password Management is', 'repo_name': 'windows_2016_cis', 'download_link': 'https://old-galaxy.ansible.com/mindpointgroup/windows_2016_cis', 'path': 'data/repos/mindpointgroup/windows_2016_cis/tasks/section18.yml', 'download_count': '744', 'output': '  set to Enabled MS only\ncommand: echo true\nwhen:\n- is_implemented\n- rule_18_2_3\n- not ansible_windows_domain_role == "Primary domain controller"\ntags:\n- level1\n- level2\n- rule_18.2.3\n- patch\n', 'org_name': 'mindpointgroup', 'license': 'MIT'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: SCORED | 18.2.3 | PATCH | L1 Ensure Enable Local Admin Password Management is', 'repo_name': 'windows_2016_cis', 'download_link': 'https://old-galaxy.ansible.com/mindpointgroup/windows_2016_cis', 'path': 'data/repos/mindpointgroup/windows_2016_cis/tasks/section18.yml', 'download_count': '744', 'output': '  set to Enabled MS only\ncommand: echo true\nwhen:\n- is_implemented\n- rule_18_2_3\n- not ansible_windows_domain_role == "Primary domain controller"\ntags:\n- level1\n- level2\n- rule_18.2.3\n- patch\n', 'org_name': 'mindpointgroup', 'license': 'MIT'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: add a comment to an existing txt record', 'repo_name': 'nios_modules', 'download_link': 'https://old-galaxy.ansible.com/infoblox/nios_modules', 'path': 'data/repos/infoblox/nios_modules/integration/targets/nios_txt_record/tasks/nios_txt_record_idempotence.yml', 'download_count': '456033', 'output': "nios_txt_record:\n  name: txt.ansible.com\n  text: mytext\n  state: present\n  comment: mycomment\n  provider: ''\nregister: txt_update1\n", 'org_name': 'infoblox', 'license': ''}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: add a comment to an existing txt record', 'repo_name': 'nios_modules', 'download_link': 'https://old-galaxy.ansible.com/infoblox/nios_modules', 'path': 'data/repos/infoblox/nios_modules/integration/targets/nios_txt_record/tasks/nios_txt_record_idempotence.yml', 'download_count': '456033', 'output': "nios_txt_record:\n  name: txt.ansible.com\n  text: mytext\n  state: present\n  comment: mycomment\n  provider: ''\nregister: txt_update1\n", 'org_name': 'infoblox', 'license': ''}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: CIS Docker Community Edition Benchmark prelim tasks', 'repo_name': 'dockerce-cis', 'download_link': 'https://old-galaxy.ansible.com/florianutz/dockerce-cis', 'path': 'data/repos/florianutz/dockerce-cis/tasks/main.yml', 'download_count': '1122', 'output': 'include_tasks: prelim.yml\n', 'org_name': 'florianutz', 'license': 'MIT'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: CIS Docker Community Edition Benchmark prelim tasks', 'repo_name': 'dockerce-cis', 'download_link': 'https://old-galaxy.ansible.com/florianutz/dockerce-cis', 'path': 'data/repos/florianutz/dockerce-cis/tasks/main.yml', 'download_count': '1122', 'output': 'include_tasks: prelim.yml\n', 'org_name': 'florianutz', 'license': 'MIT'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: SCORED | 18.2.3 | PATCH | L1 Ensure Enable Local Admin Password Management is', 'repo_name': 'windows_2016_cis', 'download_link': 'https://old-galaxy.ansible.com/mindpointgroup/windows_2016_cis', 'path': 'data/repos/mindpointgroup/windows_2016_cis/tasks/section18.yml', 'download_count': '744', 'output': '  set to Enabled MS only\ncommand: echo true\nwhen:\n- is_implemented\n- rule_18_2_3\n- not ansible_windows_domain_role == "Primary domain controller"\ntags:\n- level1\n- level2\n- rule_18.2.3\n- patch\n', 'org_name': 'mindpointgroup', 'license': 'MIT'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: Import assert.yml', 'repo_name': 'hashicorp', 'download_link': 'https://old-galaxy.ansible.com/robertdebock/hashicorp', 'path': 'data/repos/robertdebock/hashicorp/tasks/main.yml', 'download_count': '148117', 'output': 'ansible.builtin.import_tasks:\n  file: assert.yml\nrun_once: true\ndelegate_to: localhost\n', 'org_name': 'robertdebock', 'license': 'Apache-2.0-Short,Apache-2.0'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: Import assert.yml', 'repo_name': 'hashicorp', 'download_link': 'https://old-galaxy.ansible.com/robertdebock/hashicorp', 'path': 'data/repos/robertdebock/hashicorp/tasks/main.yml', 'download_count': '148117', 'output': 'ansible.builtin.import_tasks:\n  file: assert.yml\nrun_once: true\ndelegate_to: localhost\n', 'org_name': 'robertdebock', 'license': 'Apache-2.0-Short,Apache-2.0'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: add a comment to an existing txt record', 'repo_name': 'nios_modules', 'download_link': 'https://old-galaxy.ansible.com/infoblox/nios_modules', 'path': 'data/repos/infoblox/nios_modules/integration/targets/nios_txt_record/tasks/nios_txt_record_idempotence.yml', 'download_count': '456033', 'output': "nios_txt_record:\n  name: txt.ansible.com\n  text: mytext\n  state: present\n  comment: mycomment\n  provider: ''\nregister: txt_update1\n", 'org_name': 'infoblox', 'license': ''}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: CIS Docker Community Edition Benchmark prelim tasks', 'repo_name': 'dockerce-cis', 'download_link': 'https://old-galaxy.ansible.com/florianutz/dockerce-cis', 'path': 'data/repos/florianutz/dockerce-cis/tasks/main.yml', 'download_count': '1122', 'output': 'include_tasks: prelim.yml\n', 'org_name': 'florianutz', 'license': 'MIT'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: Import assert.yml', 'repo_name': 'hashicorp', 'download_link': 'https://old-galaxy.ansible.com/robertdebock/hashicorp', 'path': 'data/repos/robertdebock/hashicorp/tasks/main.yml', 'download_count': '148117', 'output': 'ansible.builtin.import_tasks:\n  file: assert.yml\nrun_once: true\ndelegate_to: localhost\n', 'org_name': 'robertdebock', 'license': 'Apache-2.0-Short,Apache-2.0'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: Uncompress Ansible Tower', 'repo_name': 'ansibletower', 'download_link': 'https://old-galaxy.ansible.com/aplyca/ansibletower', 'path': 'data/repos/aplyca/ansibletower/tasks/main.yml', 'download_count': '2746', 'output': 'unarchive:\n  src: /tmp/ansible-tower-setup-3.2.2.tar.gz\n  dest: /tmp\n  copy: false\n  creates: /tmp/ansible-tower-setup-3.2.2/setup.sh\n', 'org_name': 'aplyca', 'license': 'MIT'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: Uncompress Ansible Tower', 'repo_name': 'ansibletower', 'download_link': 'https://old-galaxy.ansible.com/aplyca/ansibletower', 'path': 'data/repos/aplyca/ansibletower/tasks/main.yml', 'download_count': '2746', 'output': 'unarchive:\n  src: /tmp/ansible-tower-setup-3.2.2.tar.gz\n  dest: /tmp\n  copy: false\n  creates: /tmp/ansible-tower-setup-3.2.2/setup.sh\n', 'org_name': 'aplyca', 'license': 'MIT'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: RVM | Clone/Update', 'repo_name': 'ruby', 'download_link': 'https://old-galaxy.ansible.com/fubarhouse/ruby', 'path': 'data/repos/fubarhouse/ruby/tasks/rvm.yml', 'download_count': '1360', 'output': "become: true\nbecome_user: ''\ngit:\n  repo: https://github.com/rvm/rvm.git\n  dest: ''\n  clone: true\n  update: false\n  force: false\n  version: master\n  recursive: false\n", 'org_name': 'fubarhouse', 'license': 'MIT'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: Import install_el.yml if OS family is EL', 'repo_name': 'kubeadm', 'download_link': 'https://old-galaxy.ansible.com/darkwizard242/kubeadm', 'path': 'data/repos/darkwizard242/kubeadm/tasks/main.yml', 'download_count': '1463', 'output': 'ansible.builtin.import_tasks: install_el.yml\nwhen: ansible_os_family == "RedHat"\n', 'org_name': 'darkwizard242', 'license': 'MIT'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: RVM | Clone/Update', 'repo_name': 'ruby', 'download_link': 'https://old-galaxy.ansible.com/fubarhouse/ruby', 'path': 'data/repos/fubarhouse/ruby/tasks/rvm.yml', 'download_count': '1360', 'output': "become: true\nbecome_user: ''\ngit:\n  repo: https://github.com/rvm/rvm.git\n  dest: ''\n  clone: true\n  update: false\n  force: false\n  version: master\n  recursive: false\n", 'org_name': 'fubarhouse', 'license': 'MIT'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: Uncompress Ansible Tower', 'repo_name': 'ansibletower', 'download_link': 'https://old-galaxy.ansible.com/aplyca/ansibletower', 'path': 'data/repos/aplyca/ansibletower/tasks/main.yml', 'download_count': '2746', 'output': 'unarchive:\n  src: /tmp/ansible-tower-setup-3.2.2.tar.gz\n  dest: /tmp\n  copy: false\n  creates: /tmp/ansible-tower-setup-3.2.2/setup.sh\n', 'org_name': 'aplyca', 'license': 'MIT'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: update apt cache', 'repo_name': 'thumbor', 'download_link': 'https://old-galaxy.ansible.com/hugomrdias/thumbor', 'path': 'data/repos/hugomrdias/thumbor/tasks/main.yml', 'download_count': '954', 'output': 'apt: update_cache=yes cache_valid_time=3600\n', 'org_name': 'hugomrdias', 'license': 'MIT'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: Import install_el.yml if OS family is EL', 'repo_name': 'kubeadm', 'download_link': 'https://old-galaxy.ansible.com/darkwizard242/kubeadm', 'path': 'data/repos/darkwizard242/kubeadm/tasks/main.yml', 'download_count': '1463', 'output': 'ansible.builtin.import_tasks: install_el.yml\nwhen: ansible_os_family == "RedHat"\n', 'org_name': 'darkwizard242', 'license': 'MIT'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: EL Family | Installing serverspec', 'repo_name': 'serverspec', 'download_link': 'https://old-galaxy.ansible.com/darkwizard242/serverspec', 'path': 'data/repos/darkwizard242/serverspec/tasks/install_el.yml', 'download_count': '3229', 'output': "ansible.builtin.gem:\n  name: serverspec\n  state: present\n  user_install: 'false'\n  include_dependencies: 'true'\n", 'org_name': 'darkwizard242', 'license': 'MIT'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: RVM | Clone/Update', 'repo_name': 'ruby', 'download_link': 'https://old-galaxy.ansible.com/fubarhouse/ruby', 'path': 'data/repos/fubarhouse/ruby/tasks/rvm.yml', 'download_count': '1360', 'output': "become: true\nbecome_user: ''\ngit:\n  repo: https://github.com/rvm/rvm.git\n  dest: ''\n  clone: true\n  update: false\n  force: false\n  version: master\n  recursive: false\n", 'org_name': 'fubarhouse', 'license': 'MIT'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: update apt cache', 'repo_name': 'thumbor', 'download_link': 'https://old-galaxy.ansible.com/hugomrdias/thumbor', 'path': 'data/repos/hugomrdias/thumbor/tasks/main.yml', 'download_count': '954', 'output': 'apt: update_cache=yes cache_valid_time=3600\n', 'org_name': 'hugomrdias', 'license': 'MIT'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: assert | Test if haproxy_backend_default_balance is set correctly', 'repo_name': 'haproxy', 'download_link': 'https://old-galaxy.ansible.com/buluma/haproxy', 'path': 'data/repos/buluma/haproxy/tasks/assert.yml', 'download_count': '15511', 'output': 'ansible.builtin.assert:\n  that:\n  - haproxy_backend_default_balance is defined\n  - haproxy_backend_default_balance is string\n  - haproxy_backend_default_balance in [ "roundrobin", "static-rr", "leastconn", "first",\n    "source", "uri", "url_param", "hdr", "rdp-cookie" ]\n  quiet: true\n', 'org_name': 'buluma', 'license': 'Apache-2.0-Short,Apache-2.0'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: Import install_el.yml if OS family is EL', 'repo_name': 'kubeadm', 'download_link': 'https://old-galaxy.ansible.com/darkwizard242/kubeadm', 'path': 'data/repos/darkwizard242/kubeadm/tasks/main.yml', 'download_count': '1463', 'output': 'ansible.builtin.import_tasks: install_el.yml\nwhen: ansible_os_family == "RedHat"\n', 'org_name': 'darkwizard242', 'license': 'MIT'}
+{'input': 'name: EL Family | Installing serverspec', 'repo_name': 'serverspec', 'download_link': 'https://old-galaxy.ansible.com/darkwizard242/serverspec', 'path': 'data/repos/darkwizard242/serverspec/tasks/install_el.yml', 'download_count': '3229', 'output': "ansible.builtin.gem:\n  name: serverspec\n  state: present\n  user_install: 'false'\n  include_dependencies: 'true'\n", 'org_name': 'darkwizard242', 'license': 'MIT'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: Enable firewalld service.', 'repo_name': 'webmin', 'download_link': 'https://old-galaxy.ansible.com/semuadmin/webmin', 'path': 'data/repos/semuadmin/webmin/tasks/webmin.yml', 'download_count': '671', 'output': 'ansible.posix.firewalld:\n  zone: public\n  service: webmin\n  permanent: true\n  state: enabled\n  immediate: true\nwhen: enable_firewalld\n', 'org_name': 'semuadmin', 'license': ''}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+{'input': 'name: update apt cache', 'repo_name': 'thumbor', 'download_link': 'https://old-galaxy.ansible.com/hugomrdias/thumbor', 'path': 'data/repos/hugomrdias/thumbor/tasks/main.yml', 'download_count': '954', 'output': 'apt: update_cache=yes cache_valid_time=3600\n', 'org_name': 'hugomrdias', 'license': 'MIT'}
+{'input': 'name: assert | Test if haproxy_backend_default_balance is set correctly', 'repo_name': 'haproxy', 'download_link': 'https://old-galaxy.ansible.com/buluma/haproxy', 'path': 'data/repos/buluma/haproxy/tasks/assert.yml', 'download_count': '15511', 'output': 'ansible.builtin.assert:\n  that:\n  - haproxy_backend_default_balance is defined\n  - haproxy_backend_default_balance is string\n  - haproxy_backend_default_balance in [ "roundrobin", "static-rr", "leastconn", "first",\n    "source", "uri", "url_param", "hdr", "rdp-cookie" ]\n  quiet: true\n', 'org_name': 'buluma', 'license': 'Apache-2.0-Short,Apache-2.0'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: Enable firewalld service.', 'repo_name': 'webmin', 'download_link': 'https://old-galaxy.ansible.com/semuadmin/webmin', 'path': 'data/repos/semuadmin/webmin/tasks/webmin.yml', 'download_count': '671', 'output': 'ansible.posix.firewalld:\n  zone: public\n  service: webmin\n  permanent: true\n  state: enabled\n  immediate: true\nwhen: enable_firewalld\n', 'org_name': 'semuadmin', 'license': ''}
+{'input': 'name: EL Family | Installing serverspec', 'repo_name': 'serverspec', 'download_link': 'https://old-galaxy.ansible.com/darkwizard242/serverspec', 'path': 'data/repos/darkwizard242/serverspec/tasks/install_el.yml', 'download_count': '3229', 'output': "ansible.builtin.gem:\n  name: serverspec\n  state: present\n  user_install: 'false'\n  include_dependencies: 'true'\n", 'org_name': 'darkwizard242', 'license': 'MIT'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: assert | Test if haproxy_backend_default_balance is set correctly', 'repo_name': 'haproxy', 'download_link': 'https://old-galaxy.ansible.com/buluma/haproxy', 'path': 'data/repos/buluma/haproxy/tasks/assert.yml', 'download_count': '15511', 'output': 'ansible.builtin.assert:\n  that:\n  - haproxy_backend_default_balance is defined\n  - haproxy_backend_default_balance is string\n  - haproxy_backend_default_balance in [ "roundrobin", "static-rr", "leastconn", "first",\n    "source", "uri", "url_param", "hdr", "rdp-cookie" ]\n  quiet: true\n', 'org_name': 'buluma', 'license': 'Apache-2.0-Short,Apache-2.0'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: Enable firewalld service.', 'repo_name': 'webmin', 'download_link': 'https://old-galaxy.ansible.com/semuadmin/webmin', 'path': 'data/repos/semuadmin/webmin/tasks/webmin.yml', 'download_count': '671', 'output': 'ansible.posix.firewalld:\n  zone: public\n  service: webmin\n  permanent: true\n  state: enabled\n  immediate: true\nwhen: enable_firewalld\n', 'org_name': 'semuadmin', 'license': ''}
+Loading the dataset
+Loading the dataset in streaming mode
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: SCORED | 18.2.3 | PATCH | L1 Ensure Enable Local Admin Password Management is', 'repo_name': 'windows_2016_cis', 'download_link': 'https://old-galaxy.ansible.com/mindpointgroup/windows_2016_cis', 'path': 'data/repos/mindpointgroup/windows_2016_cis/tasks/section18.yml', 'download_count': '744', 'output': '  set to Enabled MS only\ncommand: echo true\nwhen:\n- is_implemented\n- rule_18_2_3\n- not ansible_windows_domain_role == "Primary domain controller"\ntags:\n- level1\n- level2\n- rule_18.2.3\n- patch\n', 'org_name': 'mindpointgroup', 'license': 'MIT'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: add a comment to an existing txt record', 'repo_name': 'nios_modules', 'download_link': 'https://old-galaxy.ansible.com/infoblox/nios_modules', 'path': 'data/repos/infoblox/nios_modules/integration/targets/nios_txt_record/tasks/nios_txt_record_idempotence.yml', 'download_count': '456033', 'output': "nios_txt_record:\n  name: txt.ansible.com\n  text: mytext\n  state: present\n  comment: mycomment\n  provider: ''\nregister: txt_update1\n", 'org_name': 'infoblox', 'license': ''}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: CIS Docker Community Edition Benchmark prelim tasks', 'repo_name': 'dockerce-cis', 'download_link': 'https://old-galaxy.ansible.com/florianutz/dockerce-cis', 'path': 'data/repos/florianutz/dockerce-cis/tasks/main.yml', 'download_count': '1122', 'output': 'include_tasks: prelim.yml\n', 'org_name': 'florianutz', 'license': 'MIT'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: Import assert.yml', 'repo_name': 'hashicorp', 'download_link': 'https://old-galaxy.ansible.com/robertdebock/hashicorp', 'path': 'data/repos/robertdebock/hashicorp/tasks/main.yml', 'download_count': '148117', 'output': 'ansible.builtin.import_tasks:\n  file: assert.yml\nrun_once: true\ndelegate_to: localhost\n', 'org_name': 'robertdebock', 'license': 'Apache-2.0-Short,Apache-2.0'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: Uncompress Ansible Tower', 'repo_name': 'ansibletower', 'download_link': 'https://old-galaxy.ansible.com/aplyca/ansibletower', 'path': 'data/repos/aplyca/ansibletower/tasks/main.yml', 'download_count': '2746', 'output': 'unarchive:\n  src: /tmp/ansible-tower-setup-3.2.2.tar.gz\n  dest: /tmp\n  copy: false\n  creates: /tmp/ansible-tower-setup-3.2.2/setup.sh\n', 'org_name': 'aplyca', 'license': 'MIT'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: RVM | Clone/Update', 'repo_name': 'ruby', 'download_link': 'https://old-galaxy.ansible.com/fubarhouse/ruby', 'path': 'data/repos/fubarhouse/ruby/tasks/rvm.yml', 'download_count': '1360', 'output': "become: true\nbecome_user: ''\ngit:\n  repo: https://github.com/rvm/rvm.git\n  dest: ''\n  clone: true\n  update: false\n  force: false\n  version: master\n  recursive: false\n", 'org_name': 'fubarhouse', 'license': 'MIT'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: Import install_el.yml if OS family is EL', 'repo_name': 'kubeadm', 'download_link': 'https://old-galaxy.ansible.com/darkwizard242/kubeadm', 'path': 'data/repos/darkwizard242/kubeadm/tasks/main.yml', 'download_count': '1463', 'output': 'ansible.builtin.import_tasks: install_el.yml\nwhen: ansible_os_family == "RedHat"\n', 'org_name': 'darkwizard242', 'license': 'MIT'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: update apt cache', 'repo_name': 'thumbor', 'download_link': 'https://old-galaxy.ansible.com/hugomrdias/thumbor', 'path': 'data/repos/hugomrdias/thumbor/tasks/main.yml', 'download_count': '954', 'output': 'apt: update_cache=yes cache_valid_time=3600\n', 'org_name': 'hugomrdias', 'license': 'MIT'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: EL Family | Installing serverspec', 'repo_name': 'serverspec', 'download_link': 'https://old-galaxy.ansible.com/darkwizard242/serverspec', 'path': 'data/repos/darkwizard242/serverspec/tasks/install_el.yml', 'download_count': '3229', 'output': "ansible.builtin.gem:\n  name: serverspec\n  state: present\n  user_install: 'false'\n  include_dependencies: 'true'\n", 'org_name': 'darkwizard242', 'license': 'MIT'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: assert | Test if haproxy_backend_default_balance is set correctly', 'repo_name': 'haproxy', 'download_link': 'https://old-galaxy.ansible.com/buluma/haproxy', 'path': 'data/repos/buluma/haproxy/tasks/assert.yml', 'download_count': '15511', 'output': 'ansible.builtin.assert:\n  that:\n  - haproxy_backend_default_balance is defined\n  - haproxy_backend_default_balance is string\n  - haproxy_backend_default_balance in [ "roundrobin", "static-rr", "leastconn", "first",\n    "source", "uri", "url_param", "hdr", "rdp-cookie" ]\n  quiet: true\n', 'org_name': 'buluma', 'license': 'Apache-2.0-Short,Apache-2.0'}
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FOR DEBUGGING PURPOSES ONLY!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+{'input': 'name: Enable firewalld service.', 'repo_name': 'webmin', 'download_link': 'https://old-galaxy.ansible.com/semuadmin/webmin', 'path': 'data/repos/semuadmin/webmin/tasks/webmin.yml', 'download_count': '671', 'output': 'ansible.posix.firewalld:\n  zone: public\n  service: webmin\n  permanent: true\n  state: enabled\n  immediate: true\nwhen: enable_firewalld\n', 'org_name': 'semuadmin', 'license': ''}
+  0%|          | 0/400 [00:00<?, ?it/s]  0%|          | 0/400 [00:00<?, ?it/s]  0%|          | 0/400 [00:00<?, ?it/s]  0%|          | 0/400 [00:00<?, ?it/s]  0%|          | 1/400 [00:00<02:01,  3.29it/s]  0%|          | 1/400 [00:00<02:01,  3.28it/s]  0%|          | 1/400 [00:00<02:01,  3.28it/s]  0%|          | 1/400 [00:00<01:11,  5.59it/s] 68%|██████▊   | 274/400 [00:00<00:00, 873.72it/s] 67%|██████▋   | 269/400 [00:00<00:00, 857.65it/s] 68%|██████▊   | 274/400 [00:00<00:00, 873.43it/s] 68%|██████▊   | 274/400 [00:00<00:00, 1214.24it/s]100%|██████████| 400/400 [00:00<00:00, 876.76it/s]
+100%|██████████| 400/400 [00:00<00:00, 876.37it/s]
+100%|██████████| 400/400 [00:00<00:00, 874.52it/s]
+100%|██████████| 400/400 [00:00<00:00, 1242.34it/s]
+The character to token ratio of the dataset is: 3.18
+Loading the model
+The character to token ratio of the dataset is: 3.18
+Loading the model
+The character to token ratio of the dataset is: 3.18
+Loading the model
+The character to token ratio of the dataset is: 3.18
+Loading the model
+Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py:468: FutureWarning: The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.
+  warnings.warn(
+loading configuration file config.json from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/config.json
+Model config GPTBigCodeConfig {
+  "_name_or_path": "bigcode/starcoderbase-7b",
+  "activation_function": "gelu",
+  "architectures": [
+    "GPTBigCodeForCausalLM"
+  ],
+  "attention_softmax_in_fp32": true,
+  "attn_pdrop": 0.1,
+  "bos_token_id": 0,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 0,
+  "inference_runner": 0,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "max_batch_size": null,
+  "max_sequence_length": null,
+  "model_type": "gpt_bigcode",
+  "multi_query": true,
+  "n_embd": 4096,
+  "n_head": 32,
+  "n_inner": 16384,
+  "n_layer": 42,
+  "n_positions": 8192,
+  "pad_key_length": true,
+  "pre_allocate_kv_cache": false,
+  "resid_pdrop": 0.1,
+  "scale_attention_softmax_in_fp32": true,
+  "scale_attn_weights": true,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "torch_dtype": "float32",
+  "transformers_version": "4.40.0.dev0",
+  "use_cache": true,
+  "validate_runner_input": true,
+  "vocab_size": 49152
+}
+
+/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py:468: FutureWarning: The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.
+  warnings.warn(
+/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py:468: FutureWarning: The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.
+  warnings.warn(
+/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py:468: FutureWarning: The `use_auth_token` argument is deprecated and will be removed in v5 of Transformers. Please use `token` instead.
+  warnings.warn(
+loading configuration file config.json from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/config.json
+Model config GPTBigCodeConfig {
+  "_name_or_path": "bigcode/starcoderbase-7b",
+  "activation_function": "gelu",
+  "architectures": [
+    "GPTBigCodeForCausalLM"
+  ],
+  "attention_softmax_in_fp32": true,
+  "attn_pdrop": 0.1,
+  "bos_token_id": 0,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 0,
+  "inference_runner": 0,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "max_batch_size": null,
+  "max_sequence_length": null,
+  "model_type": "gpt_bigcode",
+  "multi_query": true,
+  "n_embd": 4096,
+  "n_head": 32,
+  "n_inner": 16384,
+  "n_layer": 42,
+  "n_positions": 8192,
+  "pad_key_length": true,
+  "pre_allocate_kv_cache": false,
+  "resid_pdrop": 0.1,
+  "scale_attention_softmax_in_fp32": true,
+  "scale_attn_weights": true,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "torch_dtype": "float32",
+  "transformers_version": "4.40.0.dev0",
+  "use_cache": true,
+  "validate_runner_input": true,
+  "vocab_size": 49152
+}
+
+loading configuration file config.json from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/config.json
+Model config GPTBigCodeConfig {
+  "_name_or_path": "bigcode/starcoderbase-7b",
+  "activation_function": "gelu",
+  "architectures": [
+    "GPTBigCodeForCausalLM"
+  ],
+  "attention_softmax_in_fp32": true,
+  "attn_pdrop": 0.1,
+  "bos_token_id": 0,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 0,
+  "inference_runner": 0,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "max_batch_size": null,
+  "max_sequence_length": null,
+  "model_type": "gpt_bigcode",
+  "multi_query": true,
+  "n_embd": 4096,
+  "n_head": 32,
+  "n_inner": 16384,
+  "n_layer": 42,
+  "n_positions": 8192,
+  "pad_key_length": true,
+  "pre_allocate_kv_cache": false,
+  "resid_pdrop": 0.1,
+  "scale_attention_softmax_in_fp32": true,
+  "scale_attn_weights": true,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "torch_dtype": "float32",
+  "transformers_version": "4.40.0.dev0",
+  "use_cache": true,
+  "validate_runner_input": true,
+  "vocab_size": 49152
+}
+
+loading configuration file config.json from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/config.json
+Model config GPTBigCodeConfig {
+  "_name_or_path": "bigcode/starcoderbase-7b",
+  "activation_function": "gelu",
+  "architectures": [
+    "GPTBigCodeForCausalLM"
+  ],
+  "attention_softmax_in_fp32": true,
+  "attn_pdrop": 0.1,
+  "bos_token_id": 0,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 0,
+  "inference_runner": 0,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "max_batch_size": null,
+  "max_sequence_length": null,
+  "model_type": "gpt_bigcode",
+  "multi_query": true,
+  "n_embd": 4096,
+  "n_head": 32,
+  "n_inner": 16384,
+  "n_layer": 42,
+  "n_positions": 8192,
+  "pad_key_length": true,
+  "pre_allocate_kv_cache": false,
+  "resid_pdrop": 0.1,
+  "scale_attention_softmax_in_fp32": true,
+  "scale_attn_weights": true,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "torch_dtype": "float32",
+  "transformers_version": "4.40.0.dev0",
+  "use_cache": true,
+  "validate_runner_input": true,
+  "vocab_size": 49152
+}
+
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+Overriding torch_dtype=None with `torch_dtype=torch.float16` due to requirements of `bitsandbytes` to enable model loading in 8-bit or 4-bit. Pass your own torch_dtype to specify the dtype of the remaining non-linear layers or pass torch_dtype=torch.float16 to remove this warning.
+Overriding torch_dtype=None with `torch_dtype=torch.float16` due to requirements of `bitsandbytes` to enable model loading in 8-bit or 4-bit. Pass your own torch_dtype to specify the dtype of the remaining non-linear layers or pass torch_dtype=torch.float16 to remove this warning.
+Overriding torch_dtype=None with `torch_dtype=torch.float16` due to requirements of `bitsandbytes` to enable model loading in 8-bit or 4-bit. Pass your own torch_dtype to specify the dtype of the remaining non-linear layers or pass torch_dtype=torch.float16 to remove this warning.
+Overriding torch_dtype=None with `torch_dtype=torch.float16` due to requirements of `bitsandbytes` to enable model loading in 8-bit or 4-bit. Pass your own torch_dtype to specify the dtype of the remaining non-linear layers or pass torch_dtype=torch.float16 to remove this warning.
+loading weights file pytorch_model.bin from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/pytorch_model.bin.index.json
+loading weights file pytorch_model.bin from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/pytorch_model.bin.index.json
+loading weights file pytorch_model.bin from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/pytorch_model.bin.index.json
+loading weights file pytorch_model.bin from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/pytorch_model.bin.index.json
+Instantiating GPTBigCodeForCausalLM model under default dtype torch.float16.
+Generate config GenerationConfig {
+  "bos_token_id": 0,
+  "eos_token_id": 0
+}
+
+Instantiating GPTBigCodeForCausalLM model under default dtype torch.float16.
+Instantiating GPTBigCodeForCausalLM model under default dtype torch.float16.
+Generate config GenerationConfig {
+  "bos_token_id": 0,
+  "eos_token_id": 0
+}
+
+Generate config GenerationConfig {
+  "bos_token_id": 0,
+  "eos_token_id": 0
+}
+
+Instantiating GPTBigCodeForCausalLM model under default dtype torch.float16.
+Generate config GenerationConfig {
+  "bos_token_id": 0,
+  "eos_token_id": 0
+}
+
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [04:56<14:48, 296.33s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [04:57<14:52, 297.37s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [04:57<14:52, 297.37s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [04:57<14:52, 297.37s/it]Loading checkpoint shards:  50%|█████     | 2/4 [10:46<10:56, 328.05s/it]Loading checkpoint shards:  50%|█████     | 2/4 [10:47<10:56, 328.35s/it]Loading checkpoint shards:  50%|█████     | 2/4 [10:47<10:56, 328.36s/it]Loading checkpoint shards:  50%|█████     | 2/4 [10:47<10:56, 328.38s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [17:35<06:05, 365.02s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [17:36<06:05, 365.10s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [17:36<06:05, 365.10s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [17:36<06:05, 365.11s/it]Loading checkpoint shards: 100%|██████████| 4/4 [18:01<00:00, 230.80s/it]Loading checkpoint shards: 100%|██████████| 4/4 [18:01<00:00, 270.29s/it]
+All model checkpoint weights were used when initializing GPTBigCodeForCausalLM.
+
+All the weights of GPTBigCodeForCausalLM were initialized from the model checkpoint at bigcode/starcoderbase-7b.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use GPTBigCodeForCausalLM for predictions without further training.
+Loading checkpoint shards: 100%|██████████| 4/4 [18:01<00:00, 231.02s/it]Loading checkpoint shards: 100%|██████████| 4/4 [18:01<00:00, 270.30s/it]
+All model checkpoint weights were used when initializing GPTBigCodeForCausalLM.
+
+All the weights of GPTBigCodeForCausalLM were initialized from the model checkpoint at bigcode/starcoderbase-7b.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use GPTBigCodeForCausalLM for predictions without further training.
+Loading checkpoint shards: 100%|██████████| 4/4 [18:01<00:00, 230.81s/it]Loading checkpoint shards: 100%|██████████| 4/4 [18:01<00:00, 270.30s/it]
+All model checkpoint weights were used when initializing GPTBigCodeForCausalLM.
+
+All the weights of GPTBigCodeForCausalLM were initialized from the model checkpoint at bigcode/starcoderbase-7b.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use GPTBigCodeForCausalLM for predictions without further training.
+Loading checkpoint shards: 100%|██████████| 4/4 [18:01<00:00, 230.82s/it]Loading checkpoint shards: 100%|██████████| 4/4 [18:01<00:00, 270.31s/it]
+All model checkpoint weights were used when initializing GPTBigCodeForCausalLM.
+
+All the weights of GPTBigCodeForCausalLM were initialized from the model checkpoint at bigcode/starcoderbase-7b.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use GPTBigCodeForCausalLM for predictions without further training.
+loading configuration file generation_config.json from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/generation_config.json
+Generate config GenerationConfig {
+  "bos_token_id": 0,
+  "eos_token_id": 0
+}
+
+loading configuration file generation_config.json from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/generation_config.json
+Generate config GenerationConfig {
+  "bos_token_id": 0,
+  "eos_token_id": 0
+}
+
+loading configuration file generation_config.json from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/generation_config.json
+Generate config GenerationConfig {
+  "bos_token_id": 0,
+  "eos_token_id": 0
+}
+
+loading configuration file generation_config.json from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/generation_config.json
+Generate config GenerationConfig {
+  "bos_token_id": 0,
+  "eos_token_id": 0
+}
+
+Started the causalLM Thing
+Started the causalLM Thing
+Started the causalLM Thing
+Started the causalLM Thing
+Prepared model for kbit training
+lora config done
+Prepared model for kbit training
+lora config done
+Prepared model for kbit training
+lora config done
+Prepared model for kbit training
+lora config done
+peft model prepared
+peft model prepared
+trainable params: 24944640 || all params: 7352207872 || trainable%: 0.33928094028732053
+model printed
+Starting main loop
+PyTorch: setting up devices
+trainable params: 24944640 || all params: 7352207872 || trainable%: 0.33928094028732053
+model printed
+Starting main loop
+PyTorch: setting up devices
+peft model prepared
+peft model prepared
+trainable params: 24944640 || all params: 7352207872 || trainable%: 0.33928094028732053
+model printed
+Starting main loop
+trainable params: 24944640 || all params: 7352207872 || trainable%: 0.33928094028732053
+model printed
+Starting main loop
+PyTorch: setting up devices
+PyTorch: setting up devices
+Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+max_steps is given, it will override any value given in num_train_epochs
+Training...
+Training...
+max_steps is given, it will override any value given in num_train_epochs
+Training...
+max_steps is given, it will override any value given in num_train_epochs
+Using auto half precision backend
+Training...
+Currently training with a batch size of: 16
+***** Running training *****
+  Num examples = 109,568
+  Num Epochs = 9,223,372,036,854,775,807
+  Instantaneous batch size per device = 16
+  Total train batch size (w. parallel, distributed & accumulation) = 512
+  Gradient Accumulation steps = 8
+  Total optimization steps = 214
+  Number of trainable parameters = 24,944,640
+Automatic Weights & Biases logging enabled, to disable set os.environ["WANDB_DISABLED"] = "true"
+wandb: Currently logged in as: hetarthvader. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.16.6
+wandb: Run data is saved locally in /projects/bbvz/choprahetarth/wandb/run-20240417_165351-itq4q3v3
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run FinalRuns-/projects/bbvz/choprahetarth/new_experiments/experiment_2
+wandb: ⭐️ View project at https://wandb.ai/hetarthvader/huggingface
+wandb: 🚀 View run at https://wandb.ai/hetarthvader/huggingface/runs/itq4q3v3
+  0%|          | 0/214 [00:00<?, ?it/s]/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/torch/utils/checkpoint.py:460: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/torch/utils/checkpoint.py:460: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/torch/utils/checkpoint.py:460: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/torch/utils/checkpoint.py:460: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/bitsandbytes/autograd/_functions.py:322: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/bitsandbytes/autograd/_functions.py:322: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/bitsandbytes/autograd/_functions.py:322: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/bitsandbytes/autograd/_functions.py:322: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/bitsandbytes/autograd/_functions.py:322: UserWarning: MatMul8bitLt: inputs will be cast from torch.bfloat16 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/bitsandbytes/autograd/_functions.py:322: UserWarning: MatMul8bitLt: inputs will be cast from torch.bfloat16 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/bitsandbytes/autograd/_functions.py:322: UserWarning: MatMul8bitLt: inputs will be cast from torch.bfloat16 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/bitsandbytes/autograd/_functions.py:322: UserWarning: MatMul8bitLt: inputs will be cast from torch.bfloat16 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+{'loss': 2.0227, 'grad_norm': 0.8374221920967102, 'learning_rate': 5e-05, 'epoch': 0.0}
+{'loss': 1.9432, 'grad_norm': 0.8399553298950195, 'learning_rate': 0.0001, 'epoch': 0.01}
+{'loss': 1.9445, 'grad_norm': 0.8488363027572632, 'learning_rate': 9.999451015497595e-05, 'epoch': 0.01}
+{'loss': 1.9274, 'grad_norm': 0.842118501663208, 'learning_rate': 9.997804182543973e-05, 'epoch': 0.02}
+{'loss': 1.7969, 'grad_norm': 0.6858841180801392, 'learning_rate': 9.99505986277344e-05, 'epoch': 0.02}
+{'loss': 1.7216, 'grad_norm': 0.4819008409976959, 'learning_rate': 9.991218658821608e-05, 'epoch': 0.03}
+  0%|          | 1/214 [01:25<5:03:08, 85.39s/it]                                                   0%|          | 1/214 [01:25<5:03:08, 85.39s/it]  1%|          | 2/214 [02:38<4:36:00, 78.12s/it]                                                   1%|          | 2/214 [02:38<4:36:00, 78.12s/it]  1%|▏         | 3/214 [03:49<4:23:02, 74.80s/it]                                                   1%|▏         | 3/214 [03:49<4:23:02, 74.80s/it]  2%|▏         | 4/214 [05:01<4:18:27, 73.85s/it]                                                   2%|▏         | 4/214 [05:01<4:18:27, 73.85s/it]  2%|▏         | 5/214 [06:12<4:13:26, 72.76s/it]                                                   2%|▏         | 5/214 [06:12<4:13:26, 72.76s/it]  3%|▎         | 6/214 [07:23<4:09:58, 72.11s/it]                                                   3%|▎         | 6/214 [07:23<4:09:58, 72.11s/it]  3%|▎         | 7/214 [08:36<4:09:25, 72.30s/it]                                                 {'loss': 1.6706, 'grad_norm': 0.38158950209617615, 'learning_rate': 9.986281414193051e-05, 'epoch': 0.03}
+{'loss': 1.6823, 'grad_norm': 0.3351069986820221, 'learning_rate': 9.980249213076084e-05, 'epoch': 0.04}
+{'loss': 1.5604, 'grad_norm': 0.3200457692146301, 'learning_rate': 9.973123380104681e-05, 'epoch': 0.04}
+{'loss': 1.5328, 'grad_norm': 0.33018895983695984, 'learning_rate': 9.964905480067586e-05, 'epoch': 0.05}
+  3%|▎         | 7/214 [08:36<4:09:25, 72.30s/it]  4%|▎         | 8/214 [09:46<4:06:39, 71.84s/it]                                                   4%|▎         | 8/214 [09:46<4:06:39, 71.84s/it]  4%|▍         | 9/214 [10:59<4:06:00, 72.00s/it]                                                   4%|▍         | 9/214 [10:59<4:06:00, 72.00s/it]  5%|▍         | 10/214 [12:10<4:03:42, 71.68s/it]                                                    5%|▍         | 10/214 [12:10<4:03:42, 71.68s/it]***** Running Evaluation *****
+  Num examples: Unknown
+  Batch size = 16
+{'eval_loss': 1.464079737663269, 'eval_runtime': 4.1456, 'eval_samples_per_second': 12.061, 'eval_steps_per_second': 0.241, 'epoch': 0.05}
+                                                    5%|▍         | 10/214 [12:14<4:03:42, 71.68s/it]Saving model checkpoint to /projects/bbvz/choprahetarth/new_experiments/experiment_2/checkpoint-10
+I AM HERE AND I AM SAVING THE MODELI AM HERE AND I AM SAVING THE MODEL
+
+the checkpoint model will be saved in the checkpoint model will be saved in   /projects/bbvz/choprahetarth/new_experiments/experiment_2/checkpoint-10/projects/bbvz/choprahetarth/new_experiments/experiment_2/checkpoint-10
+
+I AM HERE AND I AM SAVING THE MODEL
+the checkpoint model will be saved in  /projects/bbvz/choprahetarth/new_experiments/experiment_2/checkpoint-10
+loading configuration file config.json from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/config.json
+Model config GPTBigCodeConfig {
+  "_name_or_path": "/fsx/bigcode/experiments/pretraining/conversions/starcoder-7b",
+  "activation_function": "gelu",
+  "architectures": [
+    "GPTBigCodeForCausalLM"
+  ],
+  "attention_softmax_in_fp32": true,
+  "attn_pdrop": 0.1,
+  "bos_token_id": 0,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 0,
+  "inference_runner": 0,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "max_batch_size": null,
+  "max_sequence_length": null,
+  "model_type": "gpt_bigcode",
+  "multi_query": true,
+  "n_embd": 4096,
+  "n_head": 32,
+  "n_inner": 16384,
+  "n_layer": 42,
+  "n_positions": 8192,
+  "pad_key_length": true,
+  "pre_allocate_kv_cache": false,
+  "resid_pdrop": 0.1,
+  "scale_attention_softmax_in_fp32": true,
+  "scale_attn_weights": true,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "torch_dtype": "float32",
+  "transformers_version": "4.40.0.dev0",
+  "use_cache": true,
+  "validate_runner_input": true,
+  "vocab_size": 49152
+}
+
+I AM HERE AND I AM SAVING THE MODEL
+the checkpoint model will be saved in  /projects/bbvz/choprahetarth/new_experiments/experiment_2/checkpoint-10
+loading configuration file config.json from cache at /projects/bbvz/choprahetarth/hub/models--bigcode--starcoderbase-7b/snapshots/4ab631381edb607557cbb04b6e9a225bad16807c/config.json
+Model config GPTBigCodeConfig {
+  "_name_or_path": "/fsx/bigcode/experiments/pretraining/conversions/starcoder-7b",
+  "activation_function": "gelu",
+  "architectures": [
+    "GPTBigCodeForCausalLM"
+  ],
+  "attention_softmax_in_fp32": true,
+  "attn_pdrop": 0.1,
+  "bos_token_id": 0,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 0,
+  "inference_runner": 0,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "max_batch_size": null,
+  "max_sequence_length": null,
+  "model_type": "gpt_bigcode",
+  "multi_query": true,
+  "n_embd": 4096,
+  "n_head": 32,
+  "n_inner": 16384,
+  "n_layer": 42,
+  "n_positions": 8192,
+  "pad_key_length": true,
+  "pre_allocate_kv_cache": false,
+  "resid_pdrop": 0.1,
+  "scale_attention_softmax_in_fp32": true,
+  "scale_attn_weights": true,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "torch_dtype": "float32",
+  "transformers_version": "4.40.0.dev0",
+  "use_cache": true,
+  "validate_runner_input": true,
+  "vocab_size": 49152
+}
+
+the pytorch model path is /projects/bbvz/choprahetarth/new_experiments/experiment_2/checkpoint-10/pytorch_model.bin
+[rank1]:[E ProcessGroupNCCL.cpp:523] [Rank 1] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=455, OpType=BROADCAST, NumelIn=32768, NumelOut=32768, Timeout(ms)=600000) ran for 600793 milliseconds before timing out.
+Traceback (most recent call last):
+  File "/u/choprahetarth/all_files/starcoder/finetune/custom_fine_tune.py", line 363, in <module>
+    main(args)
+  File "/u/choprahetarth/all_files/starcoder/finetune/custom_fine_tune.py", line 351, in main
+    run_training(args, train_dataset, eval_dataset)
+  File "/u/choprahetarth/all_files/starcoder/finetune/custom_fine_tune.py", line 339, in run_training
+    trainer.train()
+  File "/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/transformers/trainer.py", line 1858, in train
+    return inner_training_loop(
+  File "/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/transformers/trainer.py", line 2164, in _inner_training_loop
+    for step, inputs in enumerate(epoch_iterator):
+  File "/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/accelerate/data_loader.py", line 688, in __iter__
+    next_batch, next_batch_info = self._fetch_batches(main_iterator)
+  File "/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/accelerate/data_loader.py", line 628, in _fetch_batches
+    broadcast_object_list(batch_info)
+  File "/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/accelerate/utils/operations.py", line 581, in broadcast_object_list
+    torch.distributed.broadcast_object_list(object_list, src=from_process)
+  File "/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 72, in wrapper
+    return func(*args, **kwargs)
+  File "/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 2422, in broadcast_object_list
+    object_tensor = torch.empty(  # type: ignore[call-overload]
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate more than 1EB memory.
+[rank1]:[E ProcessGroupNCCL.cpp:537] Some NCCL operations have failed or timed out. Due to the asynchronous nature of CUDA kernels, subsequent GPU operations might run on corrupted/incomplete data.
+[rank1]:[E ProcessGroupNCCL.cpp:543] To avoid data inconsistency, we are taking the entire process down.
+[rank1]:[E ProcessGroupNCCL.cpp:1182] [Rank 1] NCCL watchdog thread terminated with exception: [Rank 1] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=455, OpType=BROADCAST, NumelIn=32768, NumelOut=32768, Timeout(ms)=600000) ran for 600793 milliseconds before timing out.
+Exception raised from checkTimeout at ../torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:525 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::string) + 0x57 (0x7f5efe957d87 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/torch/lib/libc10.so)
+frame #1: c10d::ProcessGroupNCCL::WorkNCCL::checkTimeout(std::optional<std::chrono::duration<long, std::ratio<1l, 1000l> > >) + 0x1e6 (0x7f5effaff6e6 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/torch/lib/libtorch_cuda.so)
+frame #2: c10d::ProcessGroupNCCL::workCleanupLoop() + 0x19d (0x7f5effb02c3d in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/torch/lib/libtorch_cuda.so)
+frame #3: c10d::ProcessGroupNCCL::ncclCommWatchdog() + 0x119 (0x7f5effb03839 in /u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/torch/lib/libtorch_cuda.so)
+frame #4: <unknown function> + 0xdbbf4 (0x7f5f4fef4bf4 in /u/choprahetarth/.conda/envs/hetarth_py10/bin/../lib/libstdc++.so.6)
+frame #5: <unknown function> + 0x81ca (0x7f5f620411ca in /lib64/libpthread.so.0)
+frame #6: clone + 0x43 (0x7f5f61523e73 in /lib64/libc.so.6)
+
+[2024-04-17 18:09:47,053] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 1437431 closing signal SIGTERM
+[2024-04-17 18:09:47,053] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 1437433 closing signal SIGTERM
+[2024-04-17 18:09:47,054] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 1437434 closing signal SIGTERM
+[2024-04-17 18:10:09,250] torch.distributed.elastic.multiprocessing.api: [ERROR] failed (exitcode: -6) local_rank: 1 (pid: 1437432) of binary: /u/choprahetarth/.conda/envs/hetarth_py10/bin/python3
+Traceback (most recent call last):
+  File "/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/torch/distributed/run.py", line 816, in <module>
+    main()
+  File "/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 347, in wrapper
+    return f(*args, **kwargs)
+  File "/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/torch/distributed/run.py", line 812, in main
+    run(args)
+  File "/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/torch/distributed/run.py", line 803, in run
+    elastic_launch(
+  File "/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 135, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/u/choprahetarth/.conda/envs/hetarth_py10/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 268, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+========================================================
+finetune/custom_fine_tune.py FAILED
+--------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+--------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2024-04-17_18:09:47
+  host      : gpua033.delta.ncsa.illinois.edu
+  rank      : 1 (local_rank: 1)
+  exitcode  : -6 (pid: 1437432)
+  error_file: <N/A>
+  traceback : Signal 6 (SIGABRT) received by PID 1437432
+========================================================
+srun: error: gpua033: task 0: Exited with exit code 1

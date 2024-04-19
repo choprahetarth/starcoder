@@ -47,7 +47,7 @@ finetune/custom_fine_tune.py \
 --batch_size 16 \
 --input_column_name="input" \
 --output_column_name="output" \
---gradient_accumulation_steps 8 \
+--gradient_accumulation_steps 2 \
 --learning_rate 1e-4 \
 --lr_scheduler_type="cosine" \
 --num_warmup_steps 2 \

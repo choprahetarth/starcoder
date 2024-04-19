@@ -52,7 +52,7 @@ def main():
     df = pd.DataFrame(results, columns=['starcoder_response', 'codebertscore', 'bluescore'])
     print(df.head)
     # Save the DataFrame to a csv file
-    df.to_csv(f'merged1bs_ties_starcoder_comparison_2_gadient.csv', index=True)
+    df.to_csv(f'merged1bs_ties_starcoder_comparison_2_gradient.csv', index=True)
 
 
 if __name__ == "__main__":

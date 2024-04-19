@@ -18,8 +18,16 @@ import datetime
 """
 Fine-Tune StarCoder on Custom Dataset (bzd2/data/train_ftdata-new.json)
 """
-os.environ["TRANSFORMERS_CACHE"] = "/projects/bbvz/choprahetarth"
+from accelerate import InitProcessGroupKwargs
+from datetime import timedelta
 
+# Create the custom configuration
+process_group_kwargs = InitProcessGroupKwargs(timeout=timedelta(seconds=5400))  # 1.5 hours
+
+# Instantiate Accelerator with the custom configuration
+accelerator = Accelerator(kwargs_handlers=[process_group_kwargs])
+
+os.environ["TRANSFORMERS_CACHE"] = "/projects/bbvz/choprahetarth"
 def compute_similarity(code1, code2):
     _, _, f1_score, _ = code_bert_score.score(cands=[code1], refs=[code2], lang='python')
     return f1_score.item()
@@ -282,10 +290,10 @@ def run_training(args, train_data, val_data):
     model = AutoModelForCausalLM.from_pretrained(
         args.model_path,
         use_auth_token=True,
-        # use_cache=not args.no_gradient_checkpointing,
+        use_cache=not args.no_gradient_checkpointing,
         # quantization_config=quantization_config,  # Use `quantization_config` instead of `load_in_8bit`
         load_in_8bit = True,
-        device_map={"": Accelerator().process_index},
+        device_map={"": Accelerator(kwargs_handlers=[process_group_kwargs]).process_index},
     )
     print("Started the causalLM Thing")
     model = prepare_model_for_kbit_training(model)
@@ -340,8 +348,10 @@ def run_training(args, train_data, val_data):
 
     print("Saving last checkpoint of the model")
     model_path = args.model_path.split('/')[-1]  # Extracting the model name from the model path
-    checkpoint_name = f"final_checkpoint_{model_path}_lr_{args.learning_rate}_bs_{args.batch_size}_ms_{args.max_steps}_dp_{args.data_path}"
+    checkpoint_name = f"final_checkpoint_{model_path}_lr_{args.learning_rate}_bs_{args.batch_size}_ms_{args.max_steps}"
     model.save_pretrained(os.path.join(args.output_dir, checkpoint_name))
+    torch.cuda.empty_cache()
+
 
 def main(args):
 
