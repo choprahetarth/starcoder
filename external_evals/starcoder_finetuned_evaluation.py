@@ -1,15 +1,15 @@
-from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
-from peft import PeftModel
+import time
 import torch
-from torch.utils.data import DataLoader
-import pandas as pd
 import argparse
-# import code_bert_score
-from nltk.translate.bleu_score import sentence_bleu
+import pandas as pd
 from tqdm import tqdm
+from peft import PeftModel
 from datasets import load_dataset
-from code_bert_score import BERTScorer
 from rouge_score import rouge_scorer
+from code_bert_score import BERTScorer
+from torch.utils.data import DataLoader
+from nltk.translate.bleu_score import sentence_bleu
+from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 # from sacrebleu.metrics import BLEU, CHRF, TER
 # ask dave to give the code for BLEU that he used, plus ansible aware
 
@@ -28,8 +28,8 @@ def get_args():
     return parser.parse_args()
 
 def compute_similarity(code1, code2):
-    precision, recall, f1_score, f3_score = scorer.score(cands=[code1], refs=[code2], lang='python')
-    return (precision.item(),recall.item(),f1_score.item(), f3_score.item())
+    precision, recall, f1_score = scorer.score(cands=[code1], refs=[code2])
+    return (precision.item(),recall.item(),f1_score.item())
 
 def compute_bleu(reference, candidate):
     return sentence_bleu([reference], candidate)
@@ -56,7 +56,9 @@ def main():
     tokenizer.save_pretrained(f"{args.save}-merged")
     print("Loading model for causal language modeling...")
 
+    start_time = time.time()
     model = AutoModelForCausalLM.from_pretrained(f"{args.save}-merged", device_map="auto")
+    print("Time taken to load model: ", time.time() - start_time)
     print(f"Model saved to {args.peft_model_path}-merged")
 
     pipe = pipeline("text-generation", model=model , tokenizer=tokenizer, max_length=512, device_map='auto')
@@ -74,7 +76,7 @@ def main():
         codebertscore_precision =  [compute_similarity(row, starcoder_response[i])[0] for i, row in enumerate(batch['output'])]
         codebertscore_recall =  [compute_similarity(row, starcoder_response[i])[1] for i, row in enumerate(batch['output'])]
         codebertscore_f1 =  [compute_similarity(row, starcoder_response[i])[2] for i, row in enumerate(batch['output'])]
-        codebertscore_f3 =  [compute_similarity(row, starcoder_response[i])[3] for i, row in enumerate(batch['output'])]
+        # codebertscore_f3 =  [compute_similarity(row, starcoder_response[i])[3] for i, row in enumerate(batch['output'])]
         sentence_bluescore =  [compute_bleu(row, starcoder_response[i]) for i, row in enumerate(batch['output'])]
         rouge1_precision =  [compute_rouge_scores(row, starcoder_response[i])['rouge1'].precision for i, row in enumerate(batch['output'])]
         rouge1_recall =  [compute_rouge_scores(row, starcoder_response[i])['rouge1'].recall for i, row in enumerate(batch['output'])]
@@ -90,7 +92,7 @@ def main():
                             codebertscore_precision[i],
                             codebertscore_recall[i],
                             codebertscore_f1[i],
-                            codebertscore_f3[i],
+                            # codebertscore_f3[i],
                             sentence_bluescore[i],
                             rouge1_precision[i],
                             rouge1_recall[i],
@@ -107,7 +109,7 @@ def main():
                                         'codebertscore_precision', 
                                         'codebertscore_recall', 
                                         'codebertscore_f1', 
-                                        'codebertscore_f3', 
+                                        # 'codebertscore_f3', 
                                         'sentence_bluescore', 
                                         'rouge1_precision', 
                                         'rouge1_recall', 
