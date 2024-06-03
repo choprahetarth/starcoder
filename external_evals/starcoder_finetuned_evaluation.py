@@ -3,6 +3,8 @@ import torch
 import argparse
 import pandas as pd
 from tqdm import tqdm
+from collections import Counter
+from nltk.util import ngrams
 from peft import PeftModel
 from datasets import load_dataset
 from rouge_score import rouge_scorer
@@ -10,6 +12,7 @@ from code_bert_score import BERTScorer
 from torch.utils.data import DataLoader
 from nltk.translate.bleu_score import sentence_bleu
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
+from crystalbleu import corpus_bleu
 # from sacrebleu.metrics import BLEU, CHRF, TER
 # ask dave to give the code for BLEU that he used, plus ansible aware
 
@@ -34,14 +37,24 @@ def compute_similarity(code1, code2):
 def compute_bleu(reference, candidate):
     return sentence_bleu([reference], candidate)
 
+def compute_crystal_bleu(reference, candidate):
+    k = 500
+    all_ngrams = []
+    for n in range(1, 5):
+        all_ngrams.extend(list(ngrams(reference.split(), n)))
+    frequencies = Counter(all_ngrams)
+    trivially_shared_ngrams = dict(frequencies.most_common(k))
+    crystalBLEU_score = corpus_bleu([reference], [candidate], ignoring=trivially_shared_ngrams)
+    return crystalBLEU_score
+
 def main():
     args = get_args()
     print("starting...")
     base_model = AutoModelForCausalLM.from_pretrained(
         args.base_model_name_or_path,
         return_dict=True,
-        torch_dtype=torch.float32,
-        device_map='auto'
+        torch_dtype=torch.float16, # for starcoder7b 
+        device_map='auto',
     )
     
     print("Loading PEFT model...")
@@ -57,7 +70,7 @@ def main():
     print("Loading model for causal language modeling...")
 
     start_time = time.time()
-    model = AutoModelForCausalLM.from_pretrained(f"{args.save}-merged", device_map="auto")
+    model = AutoModelForCausalLM.from_pretrained(f"{args.save}-merged", device_map="auto", torch_dtype=torch.float16) #for starcoder7b 
     print("Time taken to load model: ", time.time() - start_time)
     print(f"Model saved to {args.peft_model_path}-merged")
 
@@ -76,7 +89,6 @@ def main():
         codebertscore_precision =  [compute_similarity(row, starcoder_response[i])[0] for i, row in enumerate(batch['output'])]
         codebertscore_recall =  [compute_similarity(row, starcoder_response[i])[1] for i, row in enumerate(batch['output'])]
         codebertscore_f1 =  [compute_similarity(row, starcoder_response[i])[2] for i, row in enumerate(batch['output'])]
-        # codebertscore_f3 =  [compute_similarity(row, starcoder_response[i])[3] for i, row in enumerate(batch['output'])]
         sentence_bluescore =  [compute_bleu(row, starcoder_response[i]) for i, row in enumerate(batch['output'])]
         rouge1_precision =  [compute_rouge_scores(row, starcoder_response[i])['rouge1'].precision for i, row in enumerate(batch['output'])]
         rouge1_recall =  [compute_rouge_scores(row, starcoder_response[i])['rouge1'].recall for i, row in enumerate(batch['output'])]
@@ -87,13 +99,14 @@ def main():
         rougeL_precision =  [compute_rouge_scores(row, starcoder_response[i])['rougeL'].precision for i, row in enumerate(batch['output'])]
         rougeL_recall =  [compute_rouge_scores(row, starcoder_response[i])['rougeL'].recall for i, row in enumerate(batch['output'])]
         rougeL_fmeasure =  [compute_rouge_scores(row, starcoder_response[i])['rougeL'].fmeasure for i, row in enumerate(batch['output'])]
+        crystal_bluescore =  [compute_crystal_bleu(row, starcoder_response[i]) for i, row in enumerate(batch['output'])]
         for i in range(len(starcoder_response)):
             results.append([starcoder_response[i],
                             codebertscore_precision[i],
                             codebertscore_recall[i],
                             codebertscore_f1[i],
-                            # codebertscore_f3[i],
                             sentence_bluescore[i],
+                            crystal_bluescore[i],
                             rouge1_precision[i],
                             rouge1_recall[i],
                             rouge1_fmeasure[i],
@@ -109,8 +122,8 @@ def main():
                                         'codebertscore_precision', 
                                         'codebertscore_recall', 
                                         'codebertscore_f1', 
-                                        # 'codebertscore_f3', 
                                         'sentence_bluescore', 
+                                        'crystal_bluescore',
                                         'rouge1_precision', 
                                         'rouge1_recall', 
                                         'rouge1_fmeasure', 
@@ -124,6 +137,10 @@ def main():
     df.to_csv(f'{args.save}-finetuned_starcoder_comparison.csv', index=True)
 
 if __name__ == "__main__" :
+    start_time = time.time()
     main()
+    end_time = time.time()
+    print(f"Time taken for the script to run: {end_time - start_time} seconds")
+
 
 

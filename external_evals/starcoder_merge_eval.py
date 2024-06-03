@@ -1,26 +1,55 @@
+import time
 import torch
-from torch.utils.data import DataLoader
-from transformers import AutoModelForCausalLM, pipeline, AutoTokenizer
+import argparse
 import pandas as pd
-import code_bert_score
-from nltk.translate.bleu_score import sentence_bleu
 from tqdm import tqdm
+from collections import Counter
+from nltk.util import ngrams
+from peft import PeftModel
 from datasets import load_dataset
+from rouge_score import rouge_scorer
+from code_bert_score import BERTScorer
+from torch.utils.data import DataLoader
+from nltk.translate.bleu_score import sentence_bleu
+from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
+from crystalbleu import corpus_bleu
+
+def compute_rouge_scores(reference, candidate):
+    scorer = rouge_scorer.RougeScorer(['rouge1', 'rouge2', 'rougeL'], use_stemmer=True)
+    scores = scorer.score(reference, candidate)
+    return scores
+
+scorer = BERTScorer(lang="python")
+def get_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--base_model_name_or_path", type=str, default="bigcode/starcoderbase-1b")
+    parser.add_argument("--peft_model_path", type=str, default="//projects/bbvz/choprahetarth/new_experiments/experiment_1/final_checkpoint_starcoderbase-1b_lr_0.0001_bs_64_ms_54_dp_/u/choprahetarth/all_files/data/train_ftdata-new-small.json")
+    parser.add_argument("--save", type=str, default="/projects/bbvz/choprahetarth/experiment_1/fused_model")
+    parser.add_argument("--batch_size", type=int, default=32)
+    return parser.parse_args()
 
 def compute_similarity(code1, code2):
-    _, _, f1_score, _ = code_bert_score.score(cands=[code1], refs=[code2], lang='python')
-    return f1_score.item()
+    precision, recall, f1_score = scorer.score(cands=[code1], refs=[code2])
+    return (precision.item(),recall.item(),f1_score.item())
 
 def compute_bleu(reference, candidate):
     return sentence_bleu([reference], candidate)
+
+def compute_crystal_bleu(reference, candidate):
+    k = 500
+    all_ngrams = []
+    for n in range(1, 5):
+        all_ngrams.extend(list(ngrams(reference.split(), n)))
+    frequencies = Counter(all_ngrams)
+    trivially_shared_ngrams = dict(frequencies.most_common(k))
+    crystalBLEU_score = corpus_bleu([reference], [candidate], ignoring=trivially_shared_ngrams)
+    return crystalBLEU_score
 
 def main():
     model_path = "//projects/bbvz/choprahetarth/merged_models/gradient_merger"
     print(f"Loading model from: {model_path}")
     model = AutoModelForCausalLM.from_pretrained(model_path, device_map='auto')
     print("Model loaded successfully.")
-    # device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    # model = model.to(device)
 
     print("Loading tokenizer...")
     tokenizer = AutoTokenizer.from_pretrained(model_path)

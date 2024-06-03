@@ -6,7 +6,7 @@
 #SBATCH --partition=gpuA100x4 # <- one of: gpuA100x4 gpuA40x4 gpuA100x8 gpuMI100x8
 #SBATCH --account='bbvz-delta-gpu'
 #SBATCH --job-name="evaluation_of_finetuned_code"
-#SBATCH --time=20:00:00
+#SBATCH --time=10:00:00
 ### GPU options ###
 #SBATCH --gpus-per-node=4
 # SBATCH --gpus-per-task=1
@@ -29,10 +29,19 @@ export WANDB_API_KEY=e1b18fcb1054536d8c6958c02a175ddff40f4914
 export HF_API_KEY=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
 export HF_TOKEN=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
 
+# watch -n 0.5 nvidia-smi >> /u/choprahetarth/all_files/starcoder/gpu_usage.log
+echo "Starting the evaluation process..."
 
 srun --account=bbvz-delta-gpu \
 python -m torch.distributed.run --nproc_per_node=4 /u/choprahetarth/all_files/starcoder/external_evals/starcoder_finetuned_evaluation.py \
 --base_model_name_or_path='bigcode/starcoderbase-7b' \
 --peft_model_path='//projects/bbvz/choprahetarth/new_experiments/experiment_2/final_checkpoint_starcoderbase-7b_lr_0.0001_bs_16_ms_214' \
 --save='/scratch/bbvz/choprahetarth/experiment_2/fused_model' \
---batch_size=32
+--batch_size=1
+
+# srun --account=bbvz-delta-gpu \
+# python -m torch.distributed.run --nproc_per_node=4 /u/choprahetarth/all_files/starcoder/external_evals/starcoder_finetuned_evaluation.py \
+# --base_model_name_or_path='bigcode/starcoderbase-1b' \
+# --peft_model_path='//projects/bbvz/choprahetarth/new_experiments/experiment_1/final_checkpoint_starcoderbase-1b_lr_0.0001_bs_64_ms_54_dp_/u/choprahetarth/all_files/data/train_ftdata-new-small.json' \
+# --save='/scratch/bbvz/choprahetarth/experiment_1/fused_model' \
+# --batch_size=32

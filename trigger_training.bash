@@ -3,7 +3,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=64     # <- match to OMP_NUM_THREADS
-#SBATCH --partition=gpuA100x4 # <- one of: gpuA100x4 gpuA40x4 gpuA100x8 gpuMI100x8
+#SBATCH --partition=gpuA100x8 # <- one of: gpuA100x4 gpuA40x4 gpuA100x8 gpuMI100x8
 #SBATCH --account='bbvz-delta-gpu'
 #SBATCH --job-name="finetune/custom_fine_tune.py"
 #SBATCH --time=30:00:00
