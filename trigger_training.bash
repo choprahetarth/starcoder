@@ -26,7 +26,7 @@ conda activate hetarth_py10
 export HF_HOME=/projects/bbvz/choprahetarth
 export WANDB_DIR=/projects/bbvz/choprahetarth  # replace with your desired path
 export WANDB_API_KEY=e1b18fcb1054536d8c6958c02a175ddff40f4914
-export HF_API_KEY=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
+export HF_API_KEY=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
 
 
 # chmod +x /u/choprahetarth/all_files/starcoder/finetune/*
