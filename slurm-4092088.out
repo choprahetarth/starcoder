@@ -1,0 +1,140 @@
+Running "module reset". Resetting modules to system default. The following $MODULEPATH directories have been removed: None
+Starting the evaluation process...
+2024-07-11 14:04:34,288	INFO worker.py:1770 -- Started a local Ray instance.
+starting...
+INFO 07-11 14:04:39 config.py:623] Defaulting to use mp for distributed inference
+INFO 07-11 14:04:39 llm_engine.py:161] Initializing an LLM engine (v0.5.0.post1) with config: model='/scratch/bbvz/choprahetarth/merged_models/question_1/stable-code-3b/ties', speculative_config=None, tokenizer='/scratch/bbvz/choprahetarth/merged_models/question_1/stable-code-3b/ties', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, rope_scaling=None, rope_theta=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=16384, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=4, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, quantization_param_path=None, device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='outlines'), seed=0, served_model_name=/scratch/bbvz/choprahetarth/merged_models/question_1/stable-code-3b/ties)
+INFO 07-11 14:04:41 selector.py:164] Cannot use FlashAttention-2 backend for head size 80.
+INFO 07-11 14:04:41 selector.py:51] Using XFormers backend.
+[1;36m(VllmWorkerProcess pid=2088724)[0;0m INFO 07-11 14:04:54 selector.py:164] Cannot use FlashAttention-2 backend for head size 80.
+[1;36m(VllmWorkerProcess pid=2088724)[0;0m INFO 07-11 14:04:54 selector.py:51] Using XFormers backend.
+[1;36m(VllmWorkerProcess pid=2088724)[0;0m INFO 07-11 14:04:55 multiproc_worker_utils.py:215] Worker ready; awaiting tasks
+[1;36m(VllmWorkerProcess pid=2088725)[0;0m INFO 07-11 14:04:55 selector.py:164] Cannot use FlashAttention-2 backend for head size 80.
+[1;36m(VllmWorkerProcess pid=2088725)[0;0m INFO 07-11 14:04:56 selector.py:51] Using XFormers backend.
+[1;36m(VllmWorkerProcess pid=2088726)[0;0m INFO 07-11 14:04:56 selector.py:164] Cannot use FlashAttention-2 backend for head size 80.
+[1;36m(VllmWorkerProcess pid=2088726)[0;0m INFO 07-11 14:04:56 selector.py:51] Using XFormers backend.
+[1;36m(VllmWorkerProcess pid=2088725)[0;0m INFO 07-11 14:04:56 multiproc_worker_utils.py:215] Worker ready; awaiting tasks
+[1;36m(VllmWorkerProcess pid=2088726)[0;0m INFO 07-11 14:04:56 multiproc_worker_utils.py:215] Worker ready; awaiting tasks
+INFO 07-11 14:04:56 utils.py:637] Found nccl from library libnccl.so.2
+[1;36m(VllmWorkerProcess pid=2088724)[0;0m INFO 07-11 14:04:56 utils.py:637] Found nccl from library libnccl.so.2
+[1;36m(VllmWorkerProcess pid=2088725)[0;0m INFO 07-11 14:04:56 utils.py:637] Found nccl from library libnccl.so.2
+INFO 07-11 14:04:56 pynccl.py:63] vLLM is using nccl==2.20.5
+[1;36m(VllmWorkerProcess pid=2088726)[0;0m INFO 07-11 14:04:56 utils.py:637] Found nccl from library libnccl.so.2
+[1;36m(VllmWorkerProcess pid=2088724)[0;0m INFO 07-11 14:04:56 pynccl.py:63] vLLM is using nccl==2.20.5
+[1;36m(VllmWorkerProcess pid=2088725)[0;0m INFO 07-11 14:04:56 pynccl.py:63] vLLM is using nccl==2.20.5
+[1;36m(VllmWorkerProcess pid=2088726)[0;0m INFO 07-11 14:04:56 pynccl.py:63] vLLM is using nccl==2.20.5
+Traceback (most recent call last):
+  File "/u/choprahetarth/.conda/envs/scoder_2/lib/python3.10/multiprocessing/resource_tracker.py", line 209, in main
+    cache[rtype].remove(name)
+KeyError: '/psm_0130cb6e'
+Traceback (most recent call last):
+  File "/u/choprahetarth/.conda/envs/scoder_2/lib/python3.10/multiprocessing/resource_tracker.py", line 209, in main
+    cache[rtype].remove(name)
+KeyError: '/psm_0130cb6e'
+Traceback (most recent call last):
+  File "/u/choprahetarth/.conda/envs/scoder_2/lib/python3.10/multiprocessing/resource_tracker.py", line 209, in main
+    cache[rtype].remove(name)
+KeyError: '/psm_0130cb6e'
+WARNING 07-11 14:04:59 custom_all_reduce.py:166] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[1;36m(VllmWorkerProcess pid=2088724)[0;0m WARNING 07-11 14:04:59 custom_all_reduce.py:166] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[1;36m(VllmWorkerProcess pid=2088726)[0;0m WARNING 07-11 14:04:59 custom_all_reduce.py:166] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[1;36m(VllmWorkerProcess pid=2088725)[0;0m WARNING 07-11 14:04:59 custom_all_reduce.py:166] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[1;36m(VllmWorkerProcess pid=2088725)[0;0m INFO 07-11 14:05:01 selector.py:164] Cannot use FlashAttention-2 backend for head size 80.
+[1;36m(VllmWorkerProcess pid=2088725)[0;0m INFO 07-11 14:05:01 selector.py:51] Using XFormers backend.
+[1;36m(VllmWorkerProcess pid=2088726)[0;0m INFO 07-11 14:05:01 selector.py:164] Cannot use FlashAttention-2 backend for head size 80.
+[1;36m(VllmWorkerProcess pid=2088726)[0;0m INFO 07-11 14:05:01 selector.py:51] Using XFormers backend.
+INFO 07-11 14:05:01 selector.py:164] Cannot use FlashAttention-2 backend for head size 80.
+INFO 07-11 14:05:01 selector.py:51] Using XFormers backend.
+[1;36m(VllmWorkerProcess pid=2088724)[0;0m INFO 07-11 14:05:01 selector.py:164] Cannot use FlashAttention-2 backend for head size 80.
+[1;36m(VllmWorkerProcess pid=2088724)[0;0m INFO 07-11 14:05:01 selector.py:51] Using XFormers backend.
+[1;36m(VllmWorkerProcess pid=2088724)[0;0m INFO 07-11 14:05:45 model_runner.py:160] Loading model weights took 1.3040 GB
+[1;36m(VllmWorkerProcess pid=2088725)[0;0m INFO 07-11 14:05:45 model_runner.py:160] Loading model weights took 1.3040 GB
+[1;36m(VllmWorkerProcess pid=2088726)[0;0m INFO 07-11 14:05:45 model_runner.py:160] Loading model weights took 1.3040 GB
+INFO 07-11 14:05:45 model_runner.py:160] Loading model weights took 1.3040 GB
+INFO 07-11 14:05:54 distributed_gpu_executor.py:56] # GPU blocks: 25173, # CPU blocks: 3276
+[1;36m(VllmWorkerProcess pid=2088725)[0;0m INFO 07-11 14:05:57 model_runner.py:889] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+[1;36m(VllmWorkerProcess pid=2088725)[0;0m INFO 07-11 14:05:57 model_runner.py:893] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+[1;36m(VllmWorkerProcess pid=2088726)[0;0m INFO 07-11 14:05:57 model_runner.py:889] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+[1;36m(VllmWorkerProcess pid=2088726)[0;0m INFO 07-11 14:05:57 model_runner.py:893] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+INFO 07-11 14:05:57 model_runner.py:889] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+INFO 07-11 14:05:57 model_runner.py:893] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+[1;36m(VllmWorkerProcess pid=2088724)[0;0m INFO 07-11 14:05:57 model_runner.py:889] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+[1;36m(VllmWorkerProcess pid=2088724)[0;0m INFO 07-11 14:05:57 model_runner.py:893] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+[1;36m(VllmWorkerProcess pid=2088726)[0;0m INFO 07-11 14:06:20 model_runner.py:965] Graph capturing finished in 23 secs.
+[1;36m(VllmWorkerProcess pid=2088724)[0;0m INFO 07-11 14:06:20 model_runner.py:965] Graph capturing finished in 23 secs.
+[1;36m(VllmWorkerProcess pid=2088725)[0;0m INFO 07-11 14:06:20 model_runner.py:965] Graph capturing finished in 23 secs.
+INFO 07-11 14:06:20 model_runner.py:965] Graph capturing finished in 23 secs.
+Time taken to load model:  111.57730031013489
+Loading dataset...
+Dataset loaded and shuffled successfully.
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+100%|██████████| 1/1 [00:00<00:00,  1.06it/s]
+100%|██████████| 1/1 [00:00<00:00,  1.04it/s]
+
+Processed prompts:   0%|          | 0/1646 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]
+Processed prompts:   0%|          | 1/1646 [00:00<11:51,  2.31it/s, est. speed input: 34.68 toks/s, output: 13.87 toks/s]
+Processed prompts:   0%|          | 2/1646 [00:01<15:14,  1.80it/s, est. speed input: 27.90 toks/s, output: 20.46 toks/s]
+Processed prompts:  16%|█▌        | 257/1646 [00:01<00:06, 230.60it/s, est. speed input: 3235.45 toks/s, output: 2690.92 toks/s]
+Processed prompts:  17%|█▋        | 284/1646 [00:01<00:07, 175.32it/s, est. speed input: 2824.86 toks/s, output: 2356.98 toks/s]
+Processed prompts:  31%|███       | 513/1646 [00:02<00:03, 316.03it/s, est. speed input: 4293.36 toks/s, output: 3588.07 toks/s]
+Processed prompts:  33%|███▎      | 548/1646 [00:02<00:05, 211.85it/s, est. speed input: 3662.25 toks/s, output: 3059.46 toks/s]
+Processed prompts:  47%|████▋     | 769/1646 [00:03<00:03, 290.47it/s, est. speed input: 4411.87 toks/s, output: 3662.40 toks/s]
+Processed prompts:  49%|████▊     | 801/1646 [00:03<00:04, 204.97it/s, est. speed input: 3914.63 toks/s, output: 3243.13 toks/s]
+Processed prompts:  62%|██████▏   | 1025/1646 [00:04<00:01, 325.75it/s, est. speed input: 4667.02 toks/s, output: 3886.20 toks/s]
+Processed prompts:  65%|██████▍   | 1068/1646 [00:04<00:02, 213.99it/s, est. speed input: 4153.98 toks/s, output: 3456.32 toks/s]
+Processed prompts:  78%|███████▊  | 1281/1646 [00:05<00:01, 320.48it/s, est. speed input: 4720.33 toks/s, output: 3932.99 toks/s]
+Processed prompts:  81%|████████  | 1327/1646 [00:06<00:01, 195.07it/s, est. speed input: 4175.31 toks/s, output: 3475.45 toks/s]
+Processed prompts:  93%|█████████▎| 1537/1646 [00:06<00:00, 323.58it/s, est. speed input: 4740.35 toks/s, output: 3951.63 toks/s]
+Processed prompts:  98%|█████████▊| 1615/1646 [00:06<00:00, 311.40it/s, est. speed input: 4752.03 toks/s, output: 3967.17 toks/s]
+Processed prompts: 100%|██████████| 1646/1646 [00:06<00:00, 253.73it/s, est. speed input: 4849.31 toks/s, output: 4043.25 toks/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s]Warning: Empty reference sentence detected; setting precision and recall to be 0.
+/u/choprahetarth/.conda/envs/scoder_2/lib/python3.10/site-packages/nltk/translate/bleu_score.py:552: UserWarning: 
+The hypothesis contains 0 counts of 4-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+/u/choprahetarth/.conda/envs/scoder_2/lib/python3.10/site-packages/nltk/translate/bleu_score.py:552: UserWarning: 
+The hypothesis contains 0 counts of 3-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+/u/choprahetarth/.conda/envs/scoder_2/lib/python3.10/site-packages/nltk/translate/bleu_score.py:552: UserWarning: 
+The hypothesis contains 0 counts of 2-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+/u/choprahetarth/.conda/envs/scoder_2/lib/python3.10/site-packages/crystalbleu.py:565: UserWarning: 
+The hypothesis contains 0 counts of 2-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+/u/choprahetarth/.conda/envs/scoder_2/lib/python3.10/site-packages/crystalbleu.py:565: UserWarning: 
+The hypothesis contains 0 counts of 3-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+/u/choprahetarth/.conda/envs/scoder_2/lib/python3.10/site-packages/crystalbleu.py:565: UserWarning: 
+The hypothesis contains 0 counts of 4-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+
+100%|██████████| 1/1 [00:33<00:00, 33.61s/it]
+100%|██████████| 1/1 [00:33<00:00, 33.61s/it]
+Time taken for the script to run: 153.64644169807434 seconds
+ERROR 07-11 14:07:05 multiproc_worker_utils.py:120] Worker VllmWorkerProcess pid 2088725 died, exit code: -15
+INFO 07-11 14:07:05 multiproc_worker_utils.py:123] Killing local vLLM worker processes
+
+
+srun --account=bbvz-delta-gpu \
+python /u/choprahetarth/all_files/starcoder/external_evals/starcoder_finetuned_evaluation.py \
+--model_path='/scratch/bbvz/choprahetarth/merged_models/question_1/stable-code-3b/ties' \
+--batch_size=1646

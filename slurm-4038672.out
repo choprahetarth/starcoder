@@ -1,0 +1,93 @@
+Running "module reset". Resetting modules to system default. The following $MODULEPATH directories have been removed: None
+Starting the evaluation process...
+2024-07-06 17:30:39,616	INFO worker.py:1770 -- Started a local Ray instance.
+starting...
+INFO 07-06 17:30:42 config.py:623] Defaulting to use mp for distributed inference
+INFO 07-06 17:30:42 llm_engine.py:161] Initializing an LLM engine (v0.5.0.post1) with config: model='//scratch/bbvz/choprahetarth/starcoder2_script/starcoderbase-3b/final_checkpoint_merged', speculative_config=None, tokenizer='//scratch/bbvz/choprahetarth/starcoder2_script/starcoderbase-3b/final_checkpoint_merged', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, rope_scaling=None, rope_theta=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=8192, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=2, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, quantization_param_path=None, device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='outlines'), seed=0, served_model_name=//scratch/bbvz/choprahetarth/starcoder2_script/starcoderbase-3b/final_checkpoint_merged)
+[1;36m(VllmWorkerProcess pid=1347997)[0;0m INFO 07-06 17:30:51 multiproc_worker_utils.py:215] Worker ready; awaiting tasks
+[1;36m(VllmWorkerProcess pid=1347997)[0;0m INFO 07-06 17:30:52 utils.py:637] Found nccl from library libnccl.so.2
+INFO 07-06 17:30:52 utils.py:637] Found nccl from library libnccl.so.2
+[1;36m(VllmWorkerProcess pid=1347997)[0;0m INFO 07-06 17:30:52 pynccl.py:63] vLLM is using nccl==2.20.5
+INFO 07-06 17:30:52 pynccl.py:63] vLLM is using nccl==2.20.5
+Traceback (most recent call last):
+  File "/u/choprahetarth/.conda/envs/scoder_2/lib/python3.10/multiprocessing/resource_tracker.py", line 209, in main
+    cache[rtype].remove(name)
+KeyError: '/psm_15e26780'
+INFO 07-06 17:30:52 custom_all_reduce_utils.py:170] generating GPU P2P access cache in /u/choprahetarth/.config/vllm/gpu_p2p_access_cache_for_0,1,2,3.json
+INFO 07-06 17:33:40 custom_all_reduce_utils.py:179] reading GPU P2P access cache from /u/choprahetarth/.config/vllm/gpu_p2p_access_cache_for_0,1,2,3.json
+[1;36m(VllmWorkerProcess pid=1347997)[0;0m INFO 07-06 17:33:40 custom_all_reduce_utils.py:179] reading GPU P2P access cache from /u/choprahetarth/.config/vllm/gpu_p2p_access_cache_for_0,1,2,3.json
+INFO 07-06 17:33:48 model_runner.py:160] Loading model weights took 2.8805 GB
+[1;36m(VllmWorkerProcess pid=1347997)[0;0m INFO 07-06 17:33:48 model_runner.py:160] Loading model weights took 2.8805 GB
+INFO 07-06 17:33:50 distributed_gpu_executor.py:56] # GPU blocks: 110761, # CPU blocks: 14563
+INFO 07-06 17:33:53 model_runner.py:889] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+INFO 07-06 17:33:53 model_runner.py:893] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+[1;36m(VllmWorkerProcess pid=1347997)[0;0m INFO 07-06 17:33:53 model_runner.py:889] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+[1;36m(VllmWorkerProcess pid=1347997)[0;0m INFO 07-06 17:33:53 model_runner.py:893] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+[1;36m(VllmWorkerProcess pid=1347997)[0;0m INFO 07-06 17:34:05 custom_all_reduce.py:267] Registering 2555 cuda graph addresses
+INFO 07-06 17:34:05 custom_all_reduce.py:267] Registering 2555 cuda graph addresses
+[1;36m(VllmWorkerProcess pid=1347997)[0;0m INFO 07-06 17:34:05 model_runner.py:965] Graph capturing finished in 12 secs.
+INFO 07-06 17:34:05 model_runner.py:965] Graph capturing finished in 12 secs.
+Time taken to load model:  208.4721441268921
+Loading dataset...
+Dataset loaded and shuffled successfully.
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+100%|██████████| 1/1 [00:00<00:00,  6.70it/s]
+100%|██████████| 1/1 [00:00<00:00,  6.67it/s]
+
+Processed prompts:   0%|          | 0/1646 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]
+Processed prompts:   0%|          | 1/1646 [00:01<29:17,  1.07s/it, est. speed input: 13.10 toks/s, output: 14.98 toks/s]
+Processed prompts:  16%|█▌        | 257/1646 [00:01<00:08, 156.88it/s, est. speed input: 2324.29 toks/s, output: 2101.44 toks/s]
+Processed prompts:  31%|███       | 513/1646 [00:02<00:05, 213.80it/s, est. speed input: 3168.98 toks/s, output: 2880.81 toks/s]
+Processed prompts:  47%|████▋     | 769/1646 [00:03<00:03, 224.29it/s, est. speed input: 3478.96 toks/s, output: 3135.66 toks/s]
+Processed prompts:  62%|██████▏   | 1025/1646 [00:04<00:02, 245.58it/s, est. speed input: 3760.28 toks/s, output: 3406.33 toks/s]
+Processed prompts:  78%|███████▊  | 1281/1646 [00:05<00:01, 259.07it/s, est. speed input: 3956.80 toks/s, output: 3591.76 toks/s]
+Processed prompts:  93%|█████████▎| 1537/1646 [00:06<00:00, 312.69it/s, est. speed input: 4375.31 toks/s, output: 3968.92 toks/s]
+Processed prompts: 100%|██████████| 1646/1646 [00:06<00:00, 265.56it/s, est. speed input: 4686.28 toks/s, output: 4249.04 toks/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s]/u/choprahetarth/.conda/envs/scoder_2/lib/python3.10/site-packages/nltk/translate/bleu_score.py:552: UserWarning: 
+The hypothesis contains 0 counts of 4-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+/u/choprahetarth/.conda/envs/scoder_2/lib/python3.10/site-packages/nltk/translate/bleu_score.py:552: UserWarning: 
+The hypothesis contains 0 counts of 3-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+/u/choprahetarth/.conda/envs/scoder_2/lib/python3.10/site-packages/nltk/translate/bleu_score.py:552: UserWarning: 
+The hypothesis contains 0 counts of 2-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+/u/choprahetarth/.conda/envs/scoder_2/lib/python3.10/site-packages/crystalbleu.py:565: UserWarning: 
+The hypothesis contains 0 counts of 2-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+/u/choprahetarth/.conda/envs/scoder_2/lib/python3.10/site-packages/crystalbleu.py:565: UserWarning: 
+The hypothesis contains 0 counts of 3-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+/u/choprahetarth/.conda/envs/scoder_2/lib/python3.10/site-packages/crystalbleu.py:565: UserWarning: 
+The hypothesis contains 0 counts of 4-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+
+100%|██████████| 1/1 [00:32<00:00, 32.38s/it]
+100%|██████████| 1/1 [00:32<00:00, 32.38s/it]
+Time taken for the script to run: 247.5787341594696 seconds
+[rank0]:[W CudaIPCTypes.cpp:16] Producer process has been terminated before all shared CUDA tensors released. See Note [Sharing CUDA tensors]
+
+srun --account=bbvz-delta-gpu \
+python /u/choprahetarth/all_files/starcoder/external_evals/starcoder_finetuned_evaluation.py \
+--model_path='//scratch/bbvz/choprahetarth/starcoder2_script/starcoderbase-3b/final_checkpoint_merged' \
+--batch_size=1646

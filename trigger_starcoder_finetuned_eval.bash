@@ -64,5 +64,8 @@ echo "Starting the evaluation process..."
 
 srun --account=bbvz-delta-gpu \
 python /u/choprahetarth/all_files/starcoder/external_evals/starcoder_finetuned_evaluation.py \
---model_path='//scratch/bbvz/choprahetarth/merged_models/code-llama-python-ansible' \
+--model_path='//scratch/bbvz/choprahetarth/starcoder2_script/bigger_experiments/starcoder2-15b/final_checkpoint_merged/' \
 --batch_size=1646
+# --model_path='//scratch/bbvz/choprahetarth/starcoder2_script/stable-code-3b/final_checkpoint_merged' \
+# --batch_size=1646
+# --model_path='Phind/Phind-CodeLlama-34B-v1' \

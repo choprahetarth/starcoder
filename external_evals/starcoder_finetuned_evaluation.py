@@ -13,6 +13,7 @@ from torch.utils.data import DataLoader
 from nltk.translate.bleu_score import sentence_bleu
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 from crystalbleu import corpus_bleu
+from vllm.lora.request import LoRARequest
 from vllm import LLM, SamplingParams
 
 # from sacrebleu.metrics import BLEU, CHRF, TER
@@ -73,7 +74,9 @@ def main():
 
     start_time = time.time()
     # model = AutoModelForCausalLM.from_pretrained(f"{args.save}-merged", device_map="auto", torch_dtype=torch.float16) #for starcoder7b 
+    # model = LLM(f"{args.model_path}",tensor_parallel_size=4, gpu_memory_utilization=0.8, enable_lora=True)
     model = LLM(f"{args.model_path}",tensor_parallel_size=4, gpu_memory_utilization=0.8)
+
     print("Time taken to load model: ", time.time() - start_time)
     # print(f"Model saved to {args.peft_model_path}-merged")
 
@@ -88,7 +91,9 @@ def main():
     for batch in tqdm(dataloader, total=1646//args.batch_size):
         inputs = ["The ansible code for the following task is - "+row for row in batch['input']]
     # responses = pipe(inputs)
+    # responses = model.generate(inputs, lora_request=LoRARequest("phind", 1, "//scratch/bbvz/choprahetarth/starcoder2_script/stable-code-3b/final_checkpoint"))
     responses = model.generate(inputs)
+
     # for output in responses:
     #     output_text = output.outputs[0].text
         
@@ -148,6 +153,8 @@ def main():
     # df = df.append(avg_row, ignore_index=True)
     # Save the DataFrame to a csv file
     df.to_csv(f'{args.model_path}/finetuned_starcoder_comparison.csv', index=True, escapechar='\\')
+    # df.to_csv('//scratch/bbvz/choprahetarth/starcoder2_script/Phind-CodeLlama-34B-v1/final_checkpoint_merged/finetuned_starcoder_comparison.csv', index=True, escapechar='\\')
+
 
 if __name__ == "__main__" :
     start_time = time.time()

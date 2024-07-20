@@ -1,0 +1,118 @@
+Running "module reset". Resetting modules to system default. The following $MODULEPATH directories have been removed: None
+Starting the evaluation process...
+2024-07-11 09:40:56,105	INFO worker.py:1770 -- Started a local Ray instance.
+starting...
+INFO 07-11 09:40:59 config.py:623] Defaulting to use mp for distributed inference
+INFO 07-11 09:40:59 llm_engine.py:161] Initializing an LLM engine (v0.5.0.post1) with config: model='/scratch/bbvz/choprahetarth/merged_models/question_1/codellama-13b-hf/dare_ties', speculative_config=None, tokenizer='/scratch/bbvz/choprahetarth/merged_models/question_1/codellama-13b-hf/dare_ties', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, rope_scaling=None, rope_theta=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=16384, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=4, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, quantization_param_path=None, device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='outlines'), seed=0, served_model_name=/scratch/bbvz/choprahetarth/merged_models/question_1/codellama-13b-hf/dare_ties)
+[1;36m(VllmWorkerProcess pid=1236201)[0;0m INFO 07-11 09:41:10 multiproc_worker_utils.py:215] Worker ready; awaiting tasks
+[1;36m(VllmWorkerProcess pid=1236203)[0;0m INFO 07-11 09:41:10 multiproc_worker_utils.py:215] Worker ready; awaiting tasks
+[1;36m(VllmWorkerProcess pid=1236202)[0;0m INFO 07-11 09:41:10 multiproc_worker_utils.py:215] Worker ready; awaiting tasks
+INFO 07-11 09:41:11 utils.py:637] Found nccl from library libnccl.so.2
+INFO 07-11 09:41:11 pynccl.py:63] vLLM is using nccl==2.20.5
+[1;36m(VllmWorkerProcess pid=1236201)[0;0m INFO 07-11 09:41:11 utils.py:637] Found nccl from library libnccl.so.2
+[1;36m(VllmWorkerProcess pid=1236202)[0;0m INFO 07-11 09:41:11 utils.py:637] Found nccl from library libnccl.so.2
+[1;36m(VllmWorkerProcess pid=1236203)[0;0m INFO 07-11 09:41:11 utils.py:637] Found nccl from library libnccl.so.2
+[1;36m(VllmWorkerProcess pid=1236201)[0;0m INFO 07-11 09:41:11 pynccl.py:63] vLLM is using nccl==2.20.5
+[1;36m(VllmWorkerProcess pid=1236202)[0;0m INFO 07-11 09:41:11 pynccl.py:63] vLLM is using nccl==2.20.5
+[1;36m(VllmWorkerProcess pid=1236203)[0;0m INFO 07-11 09:41:11 pynccl.py:63] vLLM is using nccl==2.20.5
+Traceback (most recent call last):
+  File "/u/choprahetarth/.conda/envs/scoder_2/lib/python3.10/multiprocessing/resource_tracker.py", line 209, in main
+    cache[rtype].remove(name)
+KeyError: '/psm_906b1353'
+Traceback (most recent call last):
+  File "/u/choprahetarth/.conda/envs/scoder_2/lib/python3.10/multiprocessing/resource_tracker.py", line 209, in main
+    cache[rtype].remove(name)
+KeyError: '/psm_906b1353'
+Traceback (most recent call last):
+  File "/u/choprahetarth/.conda/envs/scoder_2/lib/python3.10/multiprocessing/resource_tracker.py", line 209, in main
+    cache[rtype].remove(name)
+KeyError: '/psm_906b1353'
+WARNING 07-11 09:41:12 custom_all_reduce.py:166] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[1;36m(VllmWorkerProcess pid=1236202)[0;0m WARNING 07-11 09:41:12 custom_all_reduce.py:166] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[1;36m(VllmWorkerProcess pid=1236201)[0;0m WARNING 07-11 09:41:12 custom_all_reduce.py:166] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[1;36m(VllmWorkerProcess pid=1236203)[0;0m WARNING 07-11 09:41:12 custom_all_reduce.py:166] Custom allreduce is disabled because it's not supported on more than two PCIe-only GPUs. To silence this warning, specify disable_custom_all_reduce=True explicitly.
+[1;36m(VllmWorkerProcess pid=1236201)[0;0m INFO 07-11 09:41:54 model_runner.py:160] Loading model weights took 6.1146 GB
+INFO 07-11 09:41:54 model_runner.py:160] Loading model weights took 6.1146 GB
+[1;36m(VllmWorkerProcess pid=1236203)[0;0m INFO 07-11 09:41:54 model_runner.py:160] Loading model weights took 6.1146 GB
+[1;36m(VllmWorkerProcess pid=1236202)[0;0m INFO 07-11 09:41:54 model_runner.py:160] Loading model weights took 6.1146 GB
+INFO 07-11 09:42:02 distributed_gpu_executor.py:56] # GPU blocks: 8425, # CPU blocks: 1310
+INFO 07-11 09:42:04 model_runner.py:889] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+INFO 07-11 09:42:04 model_runner.py:893] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+[1;36m(VllmWorkerProcess pid=1236203)[0;0m INFO 07-11 09:42:04 model_runner.py:889] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+[1;36m(VllmWorkerProcess pid=1236203)[0;0m INFO 07-11 09:42:04 model_runner.py:893] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+[1;36m(VllmWorkerProcess pid=1236201)[0;0m INFO 07-11 09:42:04 model_runner.py:889] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+[1;36m(VllmWorkerProcess pid=1236201)[0;0m INFO 07-11 09:42:04 model_runner.py:893] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+[1;36m(VllmWorkerProcess pid=1236202)[0;0m INFO 07-11 09:42:05 model_runner.py:889] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+[1;36m(VllmWorkerProcess pid=1236202)[0;0m INFO 07-11 09:42:05 model_runner.py:893] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+INFO 07-11 09:42:27 model_runner.py:965] Graph capturing finished in 22 secs.
+[1;36m(VllmWorkerProcess pid=1236203)[0;0m INFO 07-11 09:42:27 model_runner.py:965] Graph capturing finished in 22 secs.
+[1;36m(VllmWorkerProcess pid=1236201)[0;0m INFO 07-11 09:42:27 model_runner.py:965] Graph capturing finished in 22 secs.
+[1;36m(VllmWorkerProcess pid=1236202)[0;0m INFO 07-11 09:42:27 model_runner.py:965] Graph capturing finished in 22 secs.
+Time taken to load model:  95.53046321868896
+Loading dataset...
+Dataset loaded and shuffled successfully.
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+100%|██████████| 1/1 [00:00<00:00,  1.26it/s]
+100%|██████████| 1/1 [00:00<00:00,  1.23it/s]
+
+Processed prompts:   0%|          | 0/1646 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]
+Processed prompts:   0%|          | 1/1646 [00:01<47:06,  1.72s/it, est. speed input: 9.31 toks/s, output: 9.31 toks/s]
+Processed prompts:  16%|█▌        | 257/1646 [00:03<00:16, 83.59it/s, est. speed input: 1466.72 toks/s, output: 1146.60 toks/s]
+Processed prompts:  31%|███       | 513/1646 [00:05<00:10, 112.30it/s, est. speed input: 1969.20 toks/s, output: 1543.91 toks/s]
+Processed prompts:  47%|████▋     | 769/1646 [00:07<00:07, 121.26it/s, est. speed input: 2186.02 toks/s, output: 1702.54 toks/s]
+Processed prompts:  62%|██████▏   | 1025/1646 [00:08<00:04, 138.42it/s, est. speed input: 2418.98 toks/s, output: 1890.08 toks/s]
+Processed prompts:  63%|██████▎   | 1040/1646 [00:08<00:04, 131.00it/s, est. speed input: 2370.11 toks/s, output: 1853.12 toks/s]
+Processed prompts:  78%|███████▊  | 1281/1646 [00:10<00:02, 138.34it/s, est. speed input: 2473.02 toks/s, output: 1935.71 toks/s]
+Processed prompts:  79%|███████▊  | 1294/1646 [00:10<00:02, 129.35it/s, est. speed input: 2428.76 toks/s, output: 1901.34 toks/s]
+Processed prompts:  93%|█████████▎| 1537/1646 [00:11<00:00, 178.99it/s, est. speed input: 2702.99 toks/s, output: 2114.77 toks/s]
+Processed prompts:  94%|█████████▍| 1554/1646 [00:11<00:00, 174.04it/s, est. speed input: 2695.70 toks/s, output: 2109.71 toks/s]
+Processed prompts: 100%|██████████| 1646/1646 [00:11<00:00, 139.69it/s, est. speed input: 2856.64 toks/s, output: 2234.33 toks/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s]/u/choprahetarth/.conda/envs/scoder_2/lib/python3.10/site-packages/nltk/translate/bleu_score.py:552: UserWarning: 
+The hypothesis contains 0 counts of 3-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+/u/choprahetarth/.conda/envs/scoder_2/lib/python3.10/site-packages/nltk/translate/bleu_score.py:552: UserWarning: 
+The hypothesis contains 0 counts of 4-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+/u/choprahetarth/.conda/envs/scoder_2/lib/python3.10/site-packages/nltk/translate/bleu_score.py:552: UserWarning: 
+The hypothesis contains 0 counts of 2-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+/u/choprahetarth/.conda/envs/scoder_2/lib/python3.10/site-packages/crystalbleu.py:565: UserWarning: 
+The hypothesis contains 0 counts of 2-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+/u/choprahetarth/.conda/envs/scoder_2/lib/python3.10/site-packages/crystalbleu.py:565: UserWarning: 
+The hypothesis contains 0 counts of 3-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+/u/choprahetarth/.conda/envs/scoder_2/lib/python3.10/site-packages/crystalbleu.py:565: UserWarning: 
+The hypothesis contains 0 counts of 4-gram overlaps.
+Therefore the BLEU score evaluates to 0, independently of
+how many N-gram overlaps of lower order it contains.
+Consider using lower n-gram order or use SmoothingFunction()
+  warnings.warn(_msg)
+
+100%|██████████| 1/1 [00:33<00:00, 33.99s/it]
+100%|██████████| 1/1 [00:33<00:00, 34.00s/it]
+Time taken for the script to run: 143.5618348121643 seconds
+ERROR 07-11 09:43:17 multiproc_worker_utils.py:120] Worker VllmWorkerProcess pid 1236201 died, exit code: -15
+INFO 07-11 09:43:17 multiproc_worker_utils.py:123] Killing local vLLM worker processes
+
+srun --account=bbvz-delta-gpu \
+python /u/choprahetarth/all_files/starcoder/external_evals/starcoder_finetuned_evaluation.py \
+--model_path='/scratch/bbvz/choprahetarth/merged_models/question_1/codellama-13b-hf/dare_ties' \
+--batch_size=1646
